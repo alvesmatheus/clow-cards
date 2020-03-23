@@ -1,0 +1,314 @@
+[
+  {
+    "id": 1,
+    "name": "The Arrow",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 2,
+    "name": "The Big",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 3,
+    "name": "The Bubbles",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 4,
+    "name": "The Change",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 5,
+    "name": "The Cloud",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 6,
+    "name": "The Create",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 7,
+    "name": "The Dark",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 8,
+    "name": "The Dash",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 9,
+    "name": "The Dream",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 10,
+    "name": "The Earthy",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 11,
+    "name": "The Erase",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 12,
+    "name": "The Fight",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 13,
+    "name": "The Firey",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 14,
+    "name": "The Float",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 15,
+    "name": "The Flower",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 16,
+    "name": "The Fly",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 17,
+    "name": "The Freeze",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 18,
+    "name": "The Glow",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 19,
+    "name": "The Illusion",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 20,
+    "name": "The Jump",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 21,
+    "name": "The Libra",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 22,
+    "name": "The Light",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 23,
+    "name": "The Little",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 24,
+    "name": "The Lock",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 25,
+    "name": "The Loop",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 26,
+    "name": "The Maze",
+    "sign": "Sun",
+    "type": "Western magic"
+  },
+  {
+    "id": 27,
+    "name": "The Mirror",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 28,
+    "name": "The Mist",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 29,
+    "name": "The Move",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 30,
+    "name": "The Power",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 31,
+    "name": "The Rain",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 32,
+    "name": "The Return",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 33,
+    "name": "The Sand",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 34,
+    "name": "The Shadow",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 35,
+    "name": "The Shield",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 36,
+    "name": "The Shot",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 37,
+    "name": "The Silent",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 38,
+    "name": "The Sleep",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 39,
+    "name": "The Snow",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 40,
+    "name": "The Song",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 41,
+    "name": "The Storm",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 42,
+    "name": "The Sweet",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 43,
+    "name": "The Sword",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 44,
+    "name": "The Through",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 45,
+    "name": "The Thunder",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 46,
+    "name": "The Time",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 47,
+    "name": "The Twin",
+    "sign": "Sun",
+    "type": "Western Magic"
+  },
+  {
+    "id": 48,
+    "name": "The Voice",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 49,
+    "name": "The Watery",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 50,
+    "name": "The Wave",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 51,
+    "name": "The Windy",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  },
+  {
+    "id": 52,
+    "name": "The Wood",
+    "sign": "Moon",
+    "type": "Eastern Magic"
+  }
+]
