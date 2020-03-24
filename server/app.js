@@ -3,7 +3,7 @@ const express = require("express");
 const logger = require("morgan");
 const path = require("path");
 
-const { cardsRouter, usersRouter } = require("./routes");
+const { cardsRouter, readingsRouter, usersRouter } = require("./routes");
 
 const app = express();
 const port = 3001;
@@ -16,6 +16,7 @@ app.use(cookieParser());
 app.use(logger("dev"));
 
 app.use("/cards", cardsRouter);
+app.use("/readings", readingsRouter);
 app.use("/users", usersRouter);
 
 app.listen(port, () => {
