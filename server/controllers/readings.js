@@ -15,7 +15,7 @@ module.exports = {
   deleteReading: (req, res) => {
     deletedReading = readings.splice(req.params.id - 1, 1);
 
-    return res.status("200").json(deleteReading);
+    return res.status("200").json(deletedReading);
   },
 
   getReading: (req, res) => {
