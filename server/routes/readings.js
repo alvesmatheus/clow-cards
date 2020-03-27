@@ -1,13 +1,19 @@
 const express = require("express");
 const router = express.Router();
+
 const {
+  createReading,
+  deleteReading,
   getReading,
-  getAllReadings,
-  createReading
+  getReadingsList,
+  updateReading
 } = require("../controllers/readings");
 
 router.get("/:id", getReading);
-router.get("/", getAllReadings);
+router.get("/", getReadingsList);
+
 router.post("/", createReading);
+router.put("/:id", updateReading);
+router.delete("/:id", deleteReading);
 
 module.exports = router;
