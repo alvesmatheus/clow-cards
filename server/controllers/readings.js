@@ -1,6 +1,8 @@
 const fs = require("fs");
 const _ = require("lodash");
 
+const { applyPagination, equalsIgnoreCase } = require("../utils");
+
 let rawData = fs.readFileSync("./data/readings.json");
 let readings = JSON.parse(rawData);
 
@@ -23,7 +25,44 @@ module.exports = {
   },
 
   getReadingsList: (req, res) => {
-    res.status("200").json(readings);
+    const query = {
+      filter: {
+        type: req.query.type,
+        dateFrom: req.query.from,
+        dateTo: req.query.to
+      },
+      page: {
+        offset: req.query.offset,
+        limit: req.query.limit
+      }
+    };
+
+    let readingsList = readings;
+
+    if (query.filter.type) {
+      readingsList = readingsList.filter(reading =>
+        equalsIgnoreCase(reading.type, query.filter.type)
+      );
+    }
+
+    if (query.filter.dateFrom && query.filter.dateTo) {
+      dateFrom = new Date(query.filter.dateFrom);
+      dateTo = new Date(query.filter.dateTo);
+
+      readingsList = readingsList.filter(
+        reading =>
+          new Date(reading.date) >= dateFrom && new Date(reading.date) <= dateTo
+      );
+    }
+
+    readingsList = _.orderBy(readingsList, ["date", "id"], ["desc", "desc"]);
+    readingsList = applyPagination(
+      readingsList,
+      query.page.offset,
+      query.page.limit
+    );
+
+    return res.status("200").json(readingsList);
   },
 
   updateReading: (req, res) => {

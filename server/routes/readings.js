@@ -9,11 +9,11 @@ const {
   updateReading
 } = require("../controllers/readings");
 
-router.get("/:id", getReading);
+router.get("/:id(\\d+)", getReading);
 router.get("/", getReadingsList);
 
 router.post("/", createReading);
-router.put("/:id", updateReading);
-router.delete("/:id", deleteReading);
+router.put("/:id(\\d+)", updateReading);
+router.delete("/:id(\\d+)", deleteReading);
 
 module.exports = router;
