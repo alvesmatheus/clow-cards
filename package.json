@@ -1,25 +1,22 @@
 {
-  "name": "clow-cards-api",
+  "name": "clow-cards",
   "version": "0.0.1",
   "private": true,
   "repository": "https://github.com/alvesmatheus/clow-cards.git",
   "contributors": [
     "Matheus Alves <matheus.santos@ccc.ufcg.edu.br> (https://github.com/alvesmatheus)"
   ],
+  "workspaces": [
+    "server",
+    "client"
+  ],
   "scripts": {
-    "build": "babel src -d dist",
-    "check-format": "prettier --check src/**",
-    "fix-format": "prettier --write src/**",
-    "lint": "eslint src/",
-    "start": "nodemon --exec babel-node src/index.js"
-  },
-  "dependencies": {
-    "cookie-parser": "^1.4.5",
-    "debug": "^4.1.1",
-    "express": "^4.17.1",
-    "http-errors": "^1.7.3",
-    "lodash": "^4.17.15",
-    "morgan": "^1.10.0"
+    "build": "lerna run build --stream",
+    "check-format": "lerna run check-format --stream",
+    "fix-format": "lerna run fix-format --stream",
+    "lint": "lerna run lint --stream",
+    "install": "lerna bootstrap",
+    "start": "lerna run start --stream"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -34,6 +31,8 @@
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "lerna": "^3.20.2",
     "nodemon": "^2.0.2",
     "prettier": "^2.0.2"
   }
