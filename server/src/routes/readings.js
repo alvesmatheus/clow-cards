@@ -1,4 +1,5 @@
 const express = require("express");
+
 const router = express.Router();
 
 const {
@@ -6,7 +7,7 @@ const {
   deleteReading,
   getReading,
   getReadingsList,
-  updateReading
+  updateReading,
 } = require("../controllers/readings");
 
 router.get("/:id(\\d+)", getReading);

@@ -3,8 +3,8 @@ const _ = require("lodash");
 
 const { applyPagination, equalsIgnoreCase } = require("../utils");
 
-let rawData = fs.readFileSync("./data/readings.json");
-let readings = JSON.parse(rawData);
+const rawData = fs.readFileSync("./src/data/readings.json");
+const readings = JSON.parse(rawData);
 
 module.exports = {
   createReading: (req, res) => {
@@ -15,7 +15,7 @@ module.exports = {
   },
 
   deleteReading: (req, res) => {
-    deletedReading = readings.splice(req.params.id - 1, 1);
+    const deletedReading = readings.splice(req.params.id - 1, 1);
 
     return res.status("200").json(deletedReading);
   },
@@ -29,28 +29,28 @@ module.exports = {
       filter: {
         type: req.query.type,
         dateFrom: req.query.from,
-        dateTo: req.query.to
+        dateTo: req.query.to,
       },
       page: {
         offset: req.query.offset,
-        limit: req.query.limit
-      }
+        limit: req.query.limit,
+      },
     };
 
     let readingsList = readings;
 
     if (query.filter.type) {
-      readingsList = readingsList.filter(reading =>
+      readingsList = readingsList.filter((reading) =>
         equalsIgnoreCase(reading.type, query.filter.type)
       );
     }
 
     if (query.filter.dateFrom && query.filter.dateTo) {
-      dateFrom = new Date(query.filter.dateFrom);
-      dateTo = new Date(query.filter.dateTo);
+      const dateFrom = new Date(query.filter.dateFrom);
+      const dateTo = new Date(query.filter.dateTo);
 
       readingsList = readingsList.filter(
-        reading =>
+        (reading) =>
           new Date(reading.date) >= dateFrom && new Date(reading.date) <= dateTo
       );
     }
@@ -70,5 +70,5 @@ module.exports = {
     readings.splice(req.params.id - 1, 1, req.body);
 
     return res.status("200").json(req.body);
-  }
+  },
 };

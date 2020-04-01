@@ -1,5 +1,5 @@
 module.exports = {
   cardsRouter: require("./cards"),
   readingsRouter: require("./readings"),
-  usersRouter: require("./users")
+  usersRouter: require("./users"),
 };
