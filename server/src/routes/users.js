@@ -1,9 +1,9 @@
-const express = require("express");
+import express from 'express';
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send("Got a GET request at /users");
+router.get('/', (req, res) => {
+    res.send('Got a GET request at /users');
 });
 
-module.exports = router;
+export default router;

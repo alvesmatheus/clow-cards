@@ -1,5 +1,11 @@
-module.exports = {
-  cardsRouter: require("./cards"),
-  readingsRouter: require("./readings"),
-  usersRouter: require("./users"),
+import cardsRouter from './cards';
+import readingsRouter from './readings';
+import usersRouter from './users';
+
+const routers = {
+    cardsRouter,
+    readingsRouter,
+    usersRouter,
 };
+
+export default routers;

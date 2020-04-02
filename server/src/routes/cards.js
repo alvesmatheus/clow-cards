@@ -1,10 +1,10 @@
-const express = require("express");
+import express from 'express';
+
+import { getCard, getCardsList } from '../controllers/cards';
 
 const router = express.Router();
 
-const { getCard, getCardsList } = require("../controllers/cards");
+router.get('/:id(\\d+)', getCard);
+router.get('/', getCardsList);
 
-router.get("/:id(\\d+)", getCard);
-router.get("/", getCardsList);
-
-module.exports = router;
+export default router;
