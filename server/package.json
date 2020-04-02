@@ -1,5 +1,5 @@
 {
-  "name": "clow-cards-api",
+  "name": "clow-cards-server",
   "version": "0.0.1",
   "private": true,
   "repository": "https://github.com/alvesmatheus/clow-cards.git",
