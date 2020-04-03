@@ -1,0 +1,16 @@
+{
+  "name": "clow-cards-client",
+  "version": "0.0.1",
+  "private": true,
+  "repository": "https://github.com/alvesmatheus/clow-cards.git",
+  "contributors": [
+    "Matheus Alves <matheus.santos@ccc.ufcg.edu.br> (https://github.com/alvesmatheus)"
+  ],
+  "scripts": {
+    "build": "echo \"Not implemented at client yet!\"",
+    "check-format": "echo \"Not implemented at client yet!\"",
+    "fix-format": "echo \"Not implemented at client yet!\"",
+    "lint": "echo \"Not implemented at client yet!\"",
+    "start": "echo \"Not implemented at client yet!\""
+  }
+}

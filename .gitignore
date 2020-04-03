@@ -1,1 +1,6 @@
-server/node_modules/
+# Root
+node_modules
+.DS_Store
+
+# Server
+dist/
