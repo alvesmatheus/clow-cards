@@ -1,20 +1,14 @@
 import express from 'express';
 
-import {
-    createReading,
-    deleteReading,
-    getReading,
-    getReadingsList,
-    updateReading,
-} from '../controllers/readings';
+import * as controller from '../controllers/readings';
 
 const router = express.Router();
 
-router.get('/:id(\\d+)', getReading);
-router.get('/', getReadingsList);
+router.get('/:id', controller.getReading);
+router.get('/', controller.getReadingsList);
 
-router.post('/', createReading);
-router.put('/:id(\\d+)', updateReading);
-router.delete('/:id(\\d+)', deleteReading);
+router.post('/', controller.createReading);
+router.put('/:id', controller.updateReading);
+router.delete('/:id', controller.deleteReading);
 
 export default router;
