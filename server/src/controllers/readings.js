@@ -1,75 +1,62 @@
-import fs from 'fs';
-import _ from 'lodash';
+import * as service from '../services/readings';
 
-import { applyPagination, equalsIgnoreCase } from '../utils';
+export const createReading = async (req, res) => {
+    const { method, date, cards, comments } = req.body;
+    const newReading = await service.createReading(
+        method,
+        date,
+        cards,
+        comments
+    );
 
-const rawData = fs.readFileSync('./src/data/readings.json');
-const readings = JSON.parse(rawData);
-
-export const createReading = (req, res) => {
-    req.body.id = readings.length + 1;
-    readings.push(req.body);
-
-    return res.status('201').json(req.body);
+    return res.status('201').json(newReading);
 };
 
-export const deleteReading = (req, res) => {
-    const deletedReading = readings.splice(req.params.id - 1, 1);
-
+export const deleteReading = async (req, res) => {
+    const readingID = req.params.id;
+    const deletedReading = await service.deleteReading(readingID);
     return res.status('200').json(deletedReading);
 };
 
-export const getReading = (req, res) => {
-    res.status('200').json(
-        _.filter(readings, { id: parseInt(req.params.id, 10) })
-    );
+export const getReading = async (req, res) => {
+    const readingID = req.params.id;
+    const reading = await service.getReading(readingID);
+    return res.status('200').json(reading);
 };
 
-export const getReadingsList = (req, res) => {
+export const getReadingsList = async (req, res) => {
     const query = {
-        filter: {
-            type: req.query.type,
-            dateFrom: req.query.from,
-            dateTo: req.query.to,
+        filters: {
+            method: new RegExp(req.query.method || '.+', 'i'),
+            date: {
+                $gte: req.query.from,
+                $lte: req.query.to,
+            },
         },
-        page: {
-            offset: req.query.offset,
-            limit: req.query.limit,
+        sorting: {
+            data: 'desc',
         },
+        skip: parseInt(req.query.offset, 10) || 0,
+        limit: parseInt(req.query.limit, 10) || 20,
     };
 
-    let readingsList = readings;
+    if (!query.filters.date.$gte || !query.filters.date.$lte)
+        delete query.filters.date;
 
-    if (query.filter.type) {
-        readingsList = readingsList.filter((reading) =>
-            equalsIgnoreCase(reading.type, query.filter.type)
-        );
-    }
-
-    if (query.filter.dateFrom && query.filter.dateTo) {
-        const dateFrom = new Date(query.filter.dateFrom);
-        const dateTo = new Date(query.filter.dateTo);
-
-        readingsList = readingsList.filter(
-            (reading) =>
-                new Date(reading.date) >= dateFrom &&
-                new Date(reading.date) <= dateTo
-        );
-    }
-
-    readingsList = _.orderBy(readingsList, ['date', 'id'], ['desc', 'desc']);
-    readingsList = applyPagination(
-        readingsList,
-        query.page.offset,
-        query.page.limit
-    );
-
+    const readingsList = await service.getReadingsList(query);
     return res.status('200').json(readingsList);
 };
 
-export const updateReading = (req, res) => {
-    req.body.id = req.params.id;
-    readings.splice(req.params.id - 1, 1, req.body);
+export const updateReading = async (req, res) => {
+    const readingID = req.params.id;
+    const { method, date, cards, comments } = req.body;
+    const updatedReading = await service.updateReading(
+        readingID,
+        method,
+        date,
+        cards,
+        comments
+    );
 
-    return res.status('200').json(req.body);
+    return res.status('200').json(updatedReading);
 };

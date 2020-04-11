@@ -1,45 +1,56 @@
-import fs from 'fs';
-import _ from 'lodash';
+import * as service from '../services/cards';
 
-import { applyPagination, equalsIgnoreCase } from '../utils';
+export const createCard = async (req, res) => {
+    const { name, sign, origin, meaning } = req.body;
+    const newCard = await service.createCard(name, sign, origin, meaning);
 
-const rawData = fs.readFileSync('./src/data/clow-cards.json');
-const cards = JSON.parse(rawData);
-
-export const getCard = (req, res) => {
-    res.status('200').json(
-        _.filter(cards, { id: parseInt(req.params.id, 10) })
-    );
+    return res.status('201').json(newCard);
 };
 
-export const getCardsList = (req, res) => {
+export const deleteCard = async (req, res) => {
+    const cardID = req.params.id;
+    const deletedCard = await service.deleteCard(cardID);
+    return res.status('200').json(deletedCard);
+};
+
+export const getCard = async (req, res) => {
+    const cardID = req.params.id;
+    const card = await service.getCard(cardID);
+    return res.status('200').json(card);
+};
+
+export const getCardsList = async (req, res) => {
     const query = {
-        filter: {
-            name: req.query.name,
-            sign: req.query.sign,
-            type: req.query.type,
+        filters: {
+            name: new RegExp(req.query.name || '.+', 'i'),
+            sign: new RegExp(req.query.sign || '.+', 'i'),
+            origin: new RegExp(req.query.origin || '.+', 'i'),
         },
-        sort: {
-            order: req.query.order || 'asc',
-            orderBy: req.query.orderBy || 'name',
-        },
-        page: {
-            offset: req.query.offset,
-            limit: req.query.limit,
-        },
+        sorting: {},
+        skip: parseInt(req.query.offset, 10) || 0,
+        limit: parseInt(req.query.limit, 10) || 20,
     };
 
-    let cardsList = cards;
+    const order = req.query.order || 'asc';
+    const orderBy = req.query.orderBy || 'name';
+    query.sorting[orderBy] = order;
 
-    const definedFilters = _.pickBy(query.filter, _.identity);
-    _.forEach(definedFilters, (value, key) => {
-        cardsList = cardsList.filter((card) =>
-            equalsIgnoreCase(_.get(card, key), value)
-        );
-    });
-
-    cardsList = _.orderBy(cardsList, query.sort.orderBy, query.sort.order);
-    cardsList = applyPagination(cardsList, query.page.offset, query.page.limit);
+    const cardsList = await service.getCardsList(query);
 
     return res.status('200').json(cardsList);
+};
+
+export const updateCard = async (req, res) => {
+    const { name, sign, origin, meaning } = req.body;
+    const cardID = req.params.id;
+
+    const updatedCard = await service.updateCard(
+        cardID,
+        name,
+        sign,
+        origin,
+        meaning
+    );
+
+    return res.status('200').json(updatedCard);
 };
