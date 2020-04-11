@@ -1,21 +1,21 @@
-import * as services from '../services/cards';
+import * as service from '../services/cards';
 
 export const createCard = async (req, res) => {
     const { name, sign, origin, meaning } = req.body;
-    const newCard = await services.createCard(name, sign, origin, meaning);
+    const newCard = await service.createCard(name, sign, origin, meaning);
 
     return res.status('201').json(newCard);
 };
 
 export const deleteCard = async (req, res) => {
     const cardID = req.params.id;
-    const deletedCard = await services.deleteCard(cardID);
+    const deletedCard = await service.deleteCard(cardID);
     return res.status('200').json(deletedCard);
 };
 
 export const getCard = async (req, res) => {
     const cardID = req.params.id;
-    const card = await services.getCard(cardID);
+    const card = await service.getCard(cardID);
     return res.status('200').json(card);
 };
 
@@ -35,7 +35,7 @@ export const getCardsList = async (req, res) => {
     const orderBy = req.query.orderBy || 'name';
     query.sorting[orderBy] = order;
 
-    const cardsList = await services.getCardsList(query);
+    const cardsList = await service.getCardsList(query);
 
     return res.status('200').json(cardsList);
 };
@@ -44,7 +44,7 @@ export const updateCard = async (req, res) => {
     const { name, sign, origin, meaning } = req.body;
     const cardID = req.params.id;
 
-    const updatedCard = await services.updateCard(
+    const updatedCard = await service.updateCard(
         cardID,
         name,
         sign,

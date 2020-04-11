@@ -1,8 +1,8 @@
-import * as services from '../services/readings';
+import * as service from '../services/readings';
 
 export const createReading = async (req, res) => {
     const { method, date, cards, comments } = req.body;
-    const newReading = await services.createReading(
+    const newReading = await service.createReading(
         method,
         date,
         cards,
@@ -14,13 +14,13 @@ export const createReading = async (req, res) => {
 
 export const deleteReading = async (req, res) => {
     const readingID = req.params.id;
-    const deletedReading = await services.deleteReading(readingID);
+    const deletedReading = await service.deleteReading(readingID);
     return res.status('200').json(deletedReading);
 };
 
 export const getReading = async (req, res) => {
     const readingID = req.params.id;
-    const reading = await services.getReading(readingID);
+    const reading = await service.getReading(readingID);
     return res.status('200').json(reading);
 };
 
@@ -43,14 +43,14 @@ export const getReadingsList = async (req, res) => {
     if (!query.filters.date.$gte || !query.filters.date.$lte)
         delete query.filters.date;
 
-    const readingsList = await services.getReadingsList(query);
+    const readingsList = await service.getReadingsList(query);
     return res.status('200').json(readingsList);
 };
 
 export const updateReading = async (req, res) => {
     const readingID = req.params.id;
     const { method, date, cards, comments } = req.body;
-    const updatedReading = await services.updateReading(
+    const updatedReading = await service.updateReading(
         readingID,
         method,
         date,
