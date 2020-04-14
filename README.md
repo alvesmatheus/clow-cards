@@ -12,7 +12,7 @@ This is a cartomancy simulator which uses the [Clow deck](https://ccsakura.fando
 
 ## About
 
-The **Clow Cards** is a MERN stack application being developed as a part of the *Web Development Fundamentals* subject that I'm taking during my graduation course.
+The **Clow Cards** is a MERN stack application being developed as part of the *Web Development Fundamentals* subject that I'm taking during my graduation course.
 
 > **MERN** is an acronym to MongoDB, Express, React and Node.
 
@@ -26,7 +26,7 @@ The **Clow Cards** is a MERN stack application being developed as a part of the 
 - Get the *Card of the Day* using the Clow deck.
 - Get card readings (*cartomancy*) using the Clow deck.
 - Add personal comments to the given readings.
-- Visualize the previous readings and its details.
+- Visualize the previous readings and their details.
 
 ## Installation and Usage
 
