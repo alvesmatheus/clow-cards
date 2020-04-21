@@ -4,3 +4,11 @@ node_modules
 
 # Server
 dist/
+
+# Client
+build/
+*.log*
+
+# Client
+build/
+*.log*
