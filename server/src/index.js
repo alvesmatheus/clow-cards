@@ -1,4 +1,5 @@
 import cookieParser from 'cookie-parser';
+import cors from 'cors'
 import express from 'express';
 import logger from 'morgan';
 import mongoose from 'mongoose';
@@ -22,8 +23,9 @@ db.on('error', (error) => console.log(error));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use('/static', express.static(path.join(__dirname, '../public')));
 
+app.use(cors())
 app.use(cookieParser());
 app.use(logger('dev'));
 

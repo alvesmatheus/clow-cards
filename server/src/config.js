@@ -9,8 +9,8 @@ const config = {
     },
 
     server: {
-        baseURI: process.env.SERVER_BASE_URI || 'http://localhost',
-        port: process.env.SERVER_PORT || 3001,
+        baseURI: process.env.SERVER_URI || 'http://localhost',
+        port: process.env.SERVER_PORT || '3001',
     },
 };
 
