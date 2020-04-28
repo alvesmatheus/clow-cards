@@ -4,6 +4,7 @@ import * as controller from '../controllers/readings';
 
 const router = express.Router();
 
+router.get('/count', controller.countReadings);
 router.get('/:id', controller.getReading);
 router.get('/', controller.getReadingsList);
 

@@ -1,8 +1,19 @@
 import * as service from '../services/cards';
 
+export const countCards = async (req, res) => {
+    const totalCards = await service.countCards();
+    return res.status('200').json(totalCards);
+};
+
 export const createCard = async (req, res) => {
-    const { name, sign, origin, meaning } = req.body;
-    const newCard = await service.createCard(name, sign, origin, meaning);
+    const { name, sign, origin, image, meaning } = req.body;
+    const newCard = await service.createCard(
+        name,
+        sign,
+        origin,
+        image,
+        meaning
+    );
 
     return res.status('201').json(newCard);
 };
@@ -41,7 +52,7 @@ export const getCardsList = async (req, res) => {
 };
 
 export const updateCard = async (req, res) => {
-    const { name, sign, origin, meaning } = req.body;
+    const { name, sign, origin, image, meaning } = req.body;
     const cardID = req.params.id;
 
     const updatedCard = await service.updateCard(
@@ -49,6 +60,7 @@ export const updateCard = async (req, res) => {
         name,
         sign,
         origin,
+        image,
         meaning
     );
 

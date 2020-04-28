@@ -1,5 +1,10 @@
 import * as service from '../services/readings';
 
+export const countReadings = async (req, res) => {
+    const totalReadings = await service.countReadings();
+    return res.status('200').json(totalReadings);
+};
+
 export const createReading = async (req, res) => {
     const { method, date, cards, comments } = req.body;
     const newReading = await service.createReading(

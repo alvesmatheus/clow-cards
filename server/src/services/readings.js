@@ -1,5 +1,10 @@
 import Reading from '../models/Reading';
 
+export const countReadings = async () => {
+    const totalReadings = await Reading.countDocuments();
+    return { count: totalReadings };
+};
+
 export const createReading = async (method, date, cards, comments) => {
     const newReading = await Reading.create({ method, date, cards, comments });
 
