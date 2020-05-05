@@ -1,0 +1,32 @@
+.cards-sidebar {
+    margin: 0.5rem 0.5rem 1.5rem 0.5rem;
+    padding: 0rem 2rem 0 1rem;
+}
+
+.form-label__text {
+    display: block;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    padding-left: 0.25rem;
+    text-align: left;
+}
+
+.form-label__select {
+    background-color: #9e6b7e;
+    border: 0.05rem solid #361714;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    color: #fff9ec;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    margin: 0.2rem;
+    padding: 0.5rem 0 0.5rem 0.25rem;
+    width: 100%;
+}
+
+.form-label__select:focus {
+    outline: none;
+}
