@@ -1,0 +1,17 @@
+.cards-item {
+    margin-bottom: 1.5rem;
+    padding: 0rem 1rem;
+}
+
+.cards-item__img {
+    border-radius: 0.75rem;
+    margin-bottom: 0.25rem;
+}
+
+.cards-item__name {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 1.55rem;
+    text-align: center;
+}
