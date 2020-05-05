@@ -1,0 +1,51 @@
+a {
+    color: #361714;
+    text-decoration: none;
+}
+
+.nav-bar {
+    background-color: #f5a254;
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.nav-bar__brand {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar-brand__text {
+    color: #361714;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-bar__items {
+    align-items: center;
+    display: flex;
+    padding: 0 2.5rem 0 3.5rem;
+}
+
+.nav-bar__items--left,
+.nav-bar__items--right {
+    display: flex;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.nav-bar__items--right {
+    margin-left: auto;
+}
+
+.nav-bar-items__link {
+    margin-right: 3rem;
+}
+
+.nav-bar-items__link:hover {
+    color: #fff9ec;
+    margin-right: 3rem;
+}
