@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    background-color: #f5dabf;
+    color: #361714;
+    font-family: 'Lato', sans-serif;
+}
+
+.nav-bar {
+    min-height: 8vh;
+}
+
+.main-content {
+    min-height: 92vh;
+}
