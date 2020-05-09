@@ -2,8 +2,8 @@ import React from 'react';
 
 import './CardsSidebar.css';
 
-import CardsFiltersForm from './Sidebar/CardsFiltersForm';
-import CardsSortingForm from './Sidebar/CardsSortingForm';
+import CardsFilters from './Sidebar/CardsFilters';
+import CardsSorting from './Sidebar/CardsSorting';
 
 const CardsSidebar = ({
     filters,
@@ -15,13 +15,13 @@ const CardsSidebar = ({
 }) => {
     return (
         <div className='cards-sidebar'>
-            <CardsFiltersForm
+            <CardsFilters
                 filters={filters}
                 setFilters={setFilters}
                 pagination={pagination}
                 setPagination={setPagination}
             />
-            <CardsSortingForm sorting={sorting} setSorting={setSorting} />
+            <CardsSorting sorting={sorting} setSorting={setSorting} />
         </div>
     );
 };
