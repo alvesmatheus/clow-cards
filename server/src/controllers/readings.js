@@ -1,7 +1,15 @@
 import * as service from '../services/readings';
 
 export const countReadings = async (req, res) => {
-    const totalReadings = await service.countReadings();
+    const filters = {
+        method: req.query.method,
+        date: {
+            $gte: req.query.from,
+            $lte: req.query.to,
+        },
+    };
+
+    const totalReadings = await service.countReadings(filters);
     return res.status('200').json(totalReadings);
 };
 
@@ -31,7 +39,7 @@ export const getReading = async (req, res) => {
 export const getReadingsList = async (req, res) => {
     const query = {
         filters: {
-            method: new RegExp(req.query.method || '.+', 'i'),
+            method: req.query.method,
             date: {
                 $gte: req.query.from,
                 $lte: req.query.to,

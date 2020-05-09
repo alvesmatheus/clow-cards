@@ -2,8 +2,8 @@ import mongoose from 'mongoose';
 
 import Reading from '../models/Reading';
 
-export const countReadings = async () => {
-    const totalReadings = await Reading.countDocuments();
+export const countReadings = async (filters) => {
+    const totalReadings = await Reading.countDocuments(filters);
     return { count: totalReadings };
 };
 
@@ -11,7 +11,7 @@ export const createReading = async (readingInfo) => {
     const cardsIDs = readingInfo.cards.map(
         (card) => new mongoose.Types.ObjectId(card)
     );
-    
+
     const newReading = await Reading.create({
         ...readingInfo,
         cards: cardsIDs,

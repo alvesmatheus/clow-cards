@@ -37,9 +37,11 @@ export const getCardImageURL = (cardURI) => {
     return `${config.api.staticFilesURL}/${cardURI}`;
 };
 
-export const getTotalCards = () => {
+export const getTotalCards = (filters) => {
     return cardsAPI
-        .get('/count')
+        .get('/count', {
+            params: { ...filters },
+        })
         .then((response) => response.data.count)
         .catch((error) => console.error(error));
 };

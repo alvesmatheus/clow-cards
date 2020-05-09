@@ -1,6 +1,11 @@
 import React from 'react';
 
-const CardsFiltersForm = (props) => {
+const CardsFiltersForm = ({
+    filters,
+    setFilters,
+    pagination,
+    setPagination,
+}) => {
     const signOptions = [
         { value: '', text: 'Any' },
         { value: 'Moon', text: 'Moon' },
@@ -13,10 +18,11 @@ const CardsFiltersForm = (props) => {
     ];
 
     const handleFiltersChange = (e, filtersAttibute) => {
-        const newFilters = { ...props.filters };
+        const newFilters = { ...filters };
         newFilters[filtersAttibute] = e.target.value;
 
-        props.setFilters(newFilters);
+        setFilters(newFilters);
+        setPagination({ ...pagination, page: 0 });
         e.preventDefault();
     };
 
@@ -28,7 +34,7 @@ const CardsFiltersForm = (props) => {
                     <select
                         id='cardSign'
                         className='form-label__select'
-                        value={props.filters.sign}
+                        value={filters.sign}
                         onChange={(e) => handleFiltersChange(e, 'sign')}
                     >
                         {signOptions.map((option) => (
@@ -43,7 +49,7 @@ const CardsFiltersForm = (props) => {
                     <select
                         id='cardOrigin'
                         className='form-label__select'
-                        value={props.filters.origin}
+                        value={filters.origin}
                         onChange={(e) => handleFiltersChange(e, 'origin')}
                     >
                         {originOptions.map((option) => (

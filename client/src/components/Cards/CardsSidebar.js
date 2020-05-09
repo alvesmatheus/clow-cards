@@ -5,17 +5,23 @@ import './CardsSidebar.css';
 import CardsFiltersForm from './Sidebar/CardsFiltersForm';
 import CardsSortingForm from './Sidebar/CardsSortingForm';
 
-const CardsSidebar = (props) => {
+const CardsSidebar = ({
+    filters,
+    setFilters,
+    sorting,
+    setSorting,
+    pagination,
+    setPagination,
+}) => {
     return (
         <div className='cards-sidebar'>
             <CardsFiltersForm
-                filters={props.filters}
-                setFilters={props.setFilters}
+                filters={filters}
+                setFilters={setFilters}
+                pagination={pagination}
+                setPagination={setPagination}
             />
-            <CardsSortingForm
-                sorting={props.sorting}
-                setSorting={props.setSorting}
-            />
+            <CardsSortingForm sorting={sorting} setSorting={setSorting} />
         </div>
     );
 };

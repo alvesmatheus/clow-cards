@@ -1,7 +1,7 @@
 import Card from '../models/Card';
 
-export const countCards = async () => {
-    const totalCards = await Card.countDocuments();
+export const countCards = async (filters) => {
+    const totalCards = await Card.countDocuments(filters);
     return { count: totalCards };
 };
 

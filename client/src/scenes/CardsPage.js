@@ -7,7 +7,7 @@ import './CardsPage.css';
 import CardsList from '../components/Cards/CardsList';
 import CardsSidebar from '../components/Cards/CardsSidebar';
 
-const CardsPage = (props) => {
+const CardsPage = () => {
     const [cards, setCards] = useState([]);
     const [filters, setFilters] = useState({
         name: '',
@@ -32,10 +32,10 @@ const CardsPage = (props) => {
     }, [filters, pagination, sorting]);
 
     useEffect(() => {
-        CardsAPI.getTotalCards().then((totalCards) => {
+        CardsAPI.getTotalCards(filters).then((totalCards) => {
             setTotalCards(totalCards);
         });
-    }, [totalCards]);
+    }, [filters]);
 
     return (
         <div className='cards-page'>
@@ -44,13 +44,15 @@ const CardsPage = (props) => {
                 setFilters={setFilters}
                 sorting={sorting}
                 setSorting={setSorting}
+                pagination={pagination}
+                setPagination={setPagination}
             />
             <CardsList
+                cards={cards}
                 filters={filters}
                 setFilters={setFilters}
                 pagination={pagination}
                 setPagination={setPagination}
-                cards={cards}
                 totalCards={totalCards}
             />
         </div>

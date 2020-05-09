@@ -1,7 +1,13 @@
 import * as service from '../services/cards';
 
 export const countCards = async (req, res) => {
-    const totalCards = await service.countCards();
+    const filters = {
+        name: new RegExp(req.query.name || '.+', 'i'),
+        sign: new RegExp(req.query.sign || '.+', 'i'),
+        origin: new RegExp(req.query.origin || '.+', 'i'),
+    };
+
+    const totalCards = await service.countCards(filters);
     return res.status('200').json(totalCards);
 };
 
