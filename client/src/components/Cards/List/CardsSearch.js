@@ -2,7 +2,7 @@ import React from 'react';
 
 import './CardsSearch.css';
 
-const CardsSearch = (props) => {
+const CardsSearch = ({ filters, setFilters, pagination, setPagination }) => {
     const perPageOptions = [
         { value: 5, text: '5 cards' },
         { value: 10, text: '10 cards' },
@@ -10,13 +10,13 @@ const CardsSearch = (props) => {
     ];
 
     const handleNameChange = (e) => {
-        props.setFilters({ ...props.filters, name: e.target.value });
+        setFilters({ ...filters, name: e.target.value });
         e.preventDefault();
     };
 
     const handlePerPageChange = (e) => {
-        props.setPagination({
-            ...props.pagination,
+        setPagination({
+            page: 0,
             perPage: parseInt(e.target.value),
         });
         e.preventDefault();
@@ -31,7 +31,7 @@ const CardsSearch = (props) => {
                         id='cardName'
                         className='search-bar__input'
                         type='text'
-                        value={props.filters.name}
+                        value={filters.name}
                         placeholder='Search for a card...'
                         onChange={(e) => handleNameChange(e)}
                     />
@@ -44,7 +44,7 @@ const CardsSearch = (props) => {
                     <select
                         id='cardsPerPage'
                         className='per-page__select'
-                        value={props.pagination.perPage}
+                        value={pagination.perPage}
                         onChange={(e) => handlePerPageChange(e)}
                     >
                         {perPageOptions.map((option) => (

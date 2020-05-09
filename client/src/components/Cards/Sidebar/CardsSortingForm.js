@@ -2,7 +2,7 @@ import React from 'react';
 
 import './CardsSortingForm.css';
 
-const CardsSortingForm = (props) => {
+const CardsSortingForm = ({ sorting, setSorting }) => {
     const orderByOptions = [
         { value: 'name', text: 'Name' },
         { value: 'sign', text: 'Sign' },
@@ -10,10 +10,10 @@ const CardsSortingForm = (props) => {
     ];
 
     const handleSortingChange = (e, sortingAttribute) => {
-        const newSorting = { ...props.sorting };
+        const newSorting = { ...sorting };
         newSorting[sortingAttribute] = e.target.value;
 
-        props.setSorting(newSorting);
+        setSorting(newSorting);
         e.preventDefault();
     };
 
@@ -25,7 +25,7 @@ const CardsSortingForm = (props) => {
                     <select
                         id='cardOrderBy'
                         className='form-label__select'
-                        value={props.sorting.orderBy}
+                        value={sorting.orderBy}
                         onChange={(e) => handleSortingChange(e, 'orderBy')}
                     >
                         {orderByOptions.map((option) => (
@@ -44,7 +44,7 @@ const CardsSortingForm = (props) => {
                             id='cardOrder'
                             type='radio'
                             value='asc'
-                            checked={props.sorting.order === 'asc'}
+                            checked={sorting.order === 'asc'}
                             onChange={(e) => handleSortingChange(e, 'order')}
                         />
                         <span className='form-label__text--radio'>
@@ -56,7 +56,7 @@ const CardsSortingForm = (props) => {
                             id='cardOrder'
                             type='radio'
                             value='desc'
-                            checked={props.sorting.order === 'desc'}
+                            checked={sorting.order === 'desc'}
                             onChange={(e) => handleSortingChange(e, 'order')}
                         />
                         <span className='form-label__text--radio'>
