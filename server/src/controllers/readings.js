@@ -7,12 +7,9 @@ export const countReadings = async (req, res) => {
 
 export const createReading = async (req, res) => {
     const { method, date, cards, comments } = req.body;
-    const newReading = await service.createReading(
-        method,
-        date,
-        cards,
-        comments
-    );
+    const readingInfo = { method, date, cards, comments };
+
+    const newReading = await service.createReading(readingInfo);
 
     return res.status('201').json(newReading);
 };
@@ -20,12 +17,14 @@ export const createReading = async (req, res) => {
 export const deleteReading = async (req, res) => {
     const readingID = req.params.id;
     const deletedReading = await service.deleteReading(readingID);
+
     return res.status('200').json(deletedReading);
 };
 
 export const getReading = async (req, res) => {
     const readingID = req.params.id;
     const reading = await service.getReading(readingID);
+
     return res.status('200').json(reading);
 };
 
@@ -49,19 +48,16 @@ export const getReadingsList = async (req, res) => {
         delete query.filters.date;
 
     const readingsList = await service.getReadingsList(query);
+
     return res.status('200').json(readingsList);
 };
 
 export const updateReading = async (req, res) => {
     const readingID = req.params.id;
     const { method, date, cards, comments } = req.body;
-    const updatedReading = await service.updateReading(
-        readingID,
-        method,
-        date,
-        cards,
-        comments
-    );
+    const readingInfo = { method, date, cards, comments };
+
+    const updatedReading = await service.updateReading(readingID, readingInfo);
 
     return res.status('200').json(updatedReading);
 };

@@ -5,15 +5,8 @@ export const countCards = async () => {
     return { count: totalCards };
 };
 
-export const createCard = async (name, sign, origin, image, meaning) => {
-    const newCard = await Card.create({
-        name,
-        sign,
-        origin,
-        image,
-        meaning,
-    });
-
+export const createCard = async (cardInfo) => {
+    const newCard = await Card.create({ ...cardInfo });
     return newCard;
 };
 
@@ -36,20 +29,9 @@ export const getCardsList = async (query) => {
     return cards;
 };
 
-export const updateCard = async (
-    cardID,
-    name,
-    sign,
-    origin,
-    image,
-    meaning
-) => {
-    const updatedCard = await Card.findByIdAndUpdate(cardID, {
-        name,
-        sign,
-        origin,
-        image,
-        meaning,
+export const updateCard = async (cardID, cardInfo) => {
+    const updatedCard = await Card.findByIdAndUpdate(cardID, cardInfo, {
+        new: true,
     });
 
     return updatedCard;

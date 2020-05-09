@@ -7,13 +7,9 @@ export const countCards = async (req, res) => {
 
 export const createCard = async (req, res) => {
     const { name, sign, origin, image, meaning } = req.body;
-    const newCard = await service.createCard(
-        name,
-        sign,
-        origin,
-        image,
-        meaning
-    );
+    const cardInfo = { name, sign, origin, image, meaning };
+
+    const newCard = await service.createCard(cardInfo);
 
     return res.status('201').json(newCard);
 };
@@ -21,12 +17,14 @@ export const createCard = async (req, res) => {
 export const deleteCard = async (req, res) => {
     const cardID = req.params.id;
     const deletedCard = await service.deleteCard(cardID);
+
     return res.status('200').json(deletedCard);
 };
 
 export const getCard = async (req, res) => {
     const cardID = req.params.id;
     const card = await service.getCard(cardID);
+
     return res.status('200').json(card);
 };
 
@@ -52,17 +50,11 @@ export const getCardsList = async (req, res) => {
 };
 
 export const updateCard = async (req, res) => {
-    const { name, sign, origin, image, meaning } = req.body;
     const cardID = req.params.id;
+    const { name, sign, origin, image, meaning } = req.body;
+    const cardInfo = { name, sign, origin, image, meaning };
 
-    const updatedCard = await service.updateCard(
-        cardID,
-        name,
-        sign,
-        origin,
-        image,
-        meaning
-    );
+    const updatedCard = await service.updateCard(cardID, cardInfo);
 
     return res.status('200').json(updatedCard);
 };
