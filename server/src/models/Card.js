@@ -15,6 +15,10 @@ const CardSchema = new Schema({
         default: 'Unknown',
         enum: ['Eastern Magic', 'Western Magic', 'Unknown'],
     },
+    image: {
+        type: String,
+        default: 'cards/rear-face.jpg',
+    },
     meaning: {
         type: String,
         default: 'Not found.',

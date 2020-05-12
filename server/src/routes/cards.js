@@ -4,6 +4,7 @@ import * as controller from '../controllers/cards';
 
 const router = express.Router();
 
+router.get('/count', controller.countCards);
 router.get('/:id', controller.getCard);
 router.get('/', controller.getCardsList);
 

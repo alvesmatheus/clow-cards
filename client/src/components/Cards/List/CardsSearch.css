@@ -1,0 +1,59 @@
+.cards-search {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem 2.5rem 1.5rem;
+}
+
+.search-bar {
+    background-color: #fff9ec;
+    border: 0.05rem solid #5e6472;
+    border-radius: 0.75rem;
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+}
+
+.search-bar__icon {
+    color: #5e6472;
+    margin-right: 0.5rem;
+}
+
+.search-bar__input {
+    background-color: #fff9ec;
+    border: none;
+    color: #5e6472;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+}
+
+.search-bar__input:focus {
+    outline: none;
+}
+
+.per-page {
+    display: flex;
+    justify-content: flex-end;
+    width: 15rem;
+}
+
+.per-page-label__text {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+
+.per-page__select {
+    background-color: #9e6b7e;
+    border: 0.05rem solid #361714;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    color: #fff9ec;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    margin: 0.2rem;
+    padding: 0.1rem 1rem 0.1rem 0.25rem;
+}
+
+.per-page__select:focus {
+    outline: none;
+}

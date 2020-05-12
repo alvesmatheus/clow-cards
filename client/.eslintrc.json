@@ -1,0 +1,36 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true
+    },
+    "extends": [
+        "airbnb",
+        "prettier",
+        "prettier/react"
+    ],
+    "plugins": [
+        "eslint-plugin-prettier",
+        "jsx-a11y",
+        "react"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "sourceType": "module"
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "import/prefer-default-export": "off",
+        "jsx-quotes": ["error", "prefer-single"],
+        "react/jsx-filename-extension": ["warn",
+            {"extensions": [".js", ".jsx"]}
+        ]
+      }
+}

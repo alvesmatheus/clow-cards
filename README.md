@@ -66,7 +66,7 @@ Once the database configuration is complete, you'll need to install the dependen
 yarn install
 ```
 
-After the dependencies are completely installed, you can run both the `client` and the `server` with the single command below.
+After the dependencies are completely installed, you'll need to run the following command in `client` and `server` directories separately.
 
 ```sh
 yarn start

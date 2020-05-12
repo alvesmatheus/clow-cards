@@ -3,8 +3,8 @@ import { Schema, model } from 'mongoose';
 const ReadingSchema = new Schema({
     method: {
         type: String,
-        default: 'General',
-        enum: ['General'],
+        default: 'general',
+        enum: ['general'],
     },
     date: {
         type: Date,

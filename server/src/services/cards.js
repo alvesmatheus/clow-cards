@@ -1,13 +1,12 @@
 import Card from '../models/Card';
 
-export const createCard = async (name, sign, origin, meaning) => {
-    const newCard = await Card.create({
-        name,
-        sign,
-        origin,
-        meaning,
-    });
+export const countCards = async (filters) => {
+    const totalCards = await Card.countDocuments(filters);
+    return { count: totalCards };
+};
 
+export const createCard = async (cardInfo) => {
+    const newCard = await Card.create({ ...cardInfo });
     return newCard;
 };
 
@@ -30,12 +29,9 @@ export const getCardsList = async (query) => {
     return cards;
 };
 
-export const updateCard = async (cardID, name, sign, origin, meaning) => {
-    const updatedCard = await Card.findByIdAndUpdate(cardID, {
-        name,
-        sign,
-        origin,
-        meaning,
+export const updateCard = async (cardID, cardInfo) => {
+    const updatedCard = await Card.findByIdAndUpdate(cardID, cardInfo, {
+        new: true,
     });
 
     return updatedCard;
