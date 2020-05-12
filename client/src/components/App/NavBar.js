@@ -16,6 +16,9 @@ const NavBar = () => {
                         Get a Reading
                     </a>
                     <a href='#' className='nav-bar-items__link'>
+                        Card of the Day
+                    </a>
+                    <a href='#' className='nav-bar-items__link'>
                         Meet the Cards
                     </a>
                 </nav>
