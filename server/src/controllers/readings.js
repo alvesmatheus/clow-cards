@@ -9,31 +9,45 @@ export const countReadings = async (req, res) => {
         },
     };
 
-    const totalReadings = await service.countReadings(filters);
-    return res.status('200').json(totalReadings);
+    try {
+        const totalReadings = await service.countReadings(filters);
+        return res.status('200').json(totalReadings);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const createReading = async (req, res) => {
     const { method, date, cards, comments } = req.body;
     const readingInfo = { method, date, cards, comments };
 
-    const newReading = await service.createReading(readingInfo);
-
-    return res.status('201').json(newReading);
+    try {
+        const newReading = await service.createReading(readingInfo);
+        return res.status('201').json(newReading);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const deleteReading = async (req, res) => {
     const readingID = req.params.id;
-    const deletedReading = await service.deleteReading(readingID);
 
-    return res.status('200').json(deletedReading);
+    try {
+        const deletedReading = await service.deleteReading(readingID);
+        return res.status('200').json(deletedReading);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const getReading = async (req, res) => {
     const readingID = req.params.id;
-    const reading = await service.getReading(readingID);
-
-    return res.status('200').json(reading);
+    try {
+        const reading = await service.getReading(readingID);
+        return res.status('200').json(reading);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const getReadingsList = async (req, res) => {
@@ -55,9 +69,12 @@ export const getReadingsList = async (req, res) => {
     if (!query.filters.date.$gte || !query.filters.date.$lte)
         delete query.filters.date;
 
-    const readingsList = await service.getReadingsList(query);
-
-    return res.status('200').json(readingsList);
+    try {
+        const readingsList = await service.getReadingsList(query);
+        return res.status('200').json(readingsList);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const updateReading = async (req, res) => {
@@ -65,7 +82,13 @@ export const updateReading = async (req, res) => {
     const { method, date, cards, comments } = req.body;
     const readingInfo = { method, date, cards, comments };
 
-    const updatedReading = await service.updateReading(readingID, readingInfo);
-
-    return res.status('200').json(updatedReading);
+    try {
+        const updatedReading = await service.updateReading(
+            readingID,
+            readingInfo
+        );
+        return res.status('200').json(updatedReading);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };

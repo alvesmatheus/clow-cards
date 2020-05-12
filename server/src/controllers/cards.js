@@ -7,31 +7,46 @@ export const countCards = async (req, res) => {
         origin: new RegExp(req.query.origin || '.+', 'i'),
     };
 
-    const totalCards = await service.countCards(filters);
-    return res.status('200').json(totalCards);
+    try {
+        const totalCards = await service.countCards(filters);
+        return res.status('200').json(totalCards);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const createCard = async (req, res) => {
     const { name, sign, origin, image, meaning } = req.body;
     const cardInfo = { name, sign, origin, image, meaning };
 
-    const newCard = await service.createCard(cardInfo);
-
-    return res.status('201').json(newCard);
+    try {
+        const newCard = await service.createCard(cardInfo);
+        return res.status('201').json(newCard);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const deleteCard = async (req, res) => {
     const cardID = req.params.id;
-    const deletedCard = await service.deleteCard(cardID);
 
-    return res.status('200').json(deletedCard);
+    try {
+        const deletedCard = await service.deleteCard(cardID);
+        return res.status('200').json(deletedCard);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const getCard = async (req, res) => {
     const cardID = req.params.id;
-    const card = await service.getCard(cardID);
 
-    return res.status('200').json(card);
+    try {
+        const card = await service.getCard(cardID);
+        return res.status('200').json(card);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const getCardsList = async (req, res) => {
@@ -50,9 +65,12 @@ export const getCardsList = async (req, res) => {
     const orderBy = req.query.orderBy || 'name';
     query.sorting[orderBy] = order;
 
-    const cardsList = await service.getCardsList(query);
-
-    return res.status('200').json(cardsList);
+    try {
+        const cardsList = await service.getCardsList(query);
+        return res.status('200').json(cardsList);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
 
 export const updateCard = async (req, res) => {
@@ -60,7 +78,10 @@ export const updateCard = async (req, res) => {
     const { name, sign, origin, image, meaning } = req.body;
     const cardInfo = { name, sign, origin, image, meaning };
 
-    const updatedCard = await service.updateCard(cardID, cardInfo);
-
-    return res.status('200').json(updatedCard);
+    try {
+        const updatedCard = await service.updateCard(cardID, cardInfo);
+        return res.status('200').json(updatedCard);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
 };
