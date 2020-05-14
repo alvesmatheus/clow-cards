@@ -1,6 +1,6 @@
 import Card from '../models/Card';
 
-import { checkMissingKeys, checkUndefinedValue } from '../utils';
+import { verifyRequestData } from '../utils/validation';
 
 export const countCards = async (filters) => {
     try {
@@ -12,11 +12,9 @@ export const countCards = async (filters) => {
 };
 
 export const createCard = async (cardInfo) => {
-    const expectedKeys = ['name', 'sign', 'origin'];
-    const missingKeys = checkMissingKeys(cardInfo, expectedKeys);
-    if (missingKeys) {
-        throw new Error(missingKeys);
-    }
+    const expectedProps = ['name', 'sign', 'origin'];
+    const errorMsg = verifyRequestData(cardInfo, expectedProps);
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
         const newCard = await Card.create({ ...cardInfo });
@@ -27,10 +25,9 @@ export const createCard = async (cardInfo) => {
 };
 
 export const deleteCard = async (cardID) => {
-    const missingValue = checkUndefinedValue(cardID, 'Card ID');
-    if (missingValue) {
-        throw new Error(missingValue);
-    }
+    const expectedProps = ['id'];
+    const errorMsg = verifyRequestData({ id: cardID }, expectedProps);
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
         const deletedCard = await Card.findByIdAndDelete(cardID);
@@ -41,10 +38,9 @@ export const deleteCard = async (cardID) => {
 };
 
 export const getCard = async (cardID) => {
-    const missingValue = checkUndefinedValue(cardID, 'Card ID');
-    if (missingValue) {
-        throw new Error(missingValue);
-    }
+    const expectedProps = ['id'];
+    const errorMsg = verifyRequestData({ id: cardID }, expectedProps);
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
         const card = await Card.findById(cardID);
@@ -60,7 +56,6 @@ export const getCardsList = async (query) => {
             .sort(query.sorting)
             .skip(query.skip)
             .limit(query.limit);
-
         return cards;
     } catch (error) {
         throw new Error(error.message);
@@ -68,11 +63,12 @@ export const getCardsList = async (query) => {
 };
 
 export const updateCard = async (cardID, cardInfo) => {
-    const expectedKeys = ['name', 'sign', 'origin', 'image', 'meaning'];
-    const missingKeys = checkMissingKeys(cardInfo, expectedKeys);
-    if (missingKeys) {
-        throw new Error(missingKeys);
-    }
+    const expectedProps = ['id', 'name', 'sign', 'origin', 'image', 'meaning'];
+    const errorMsg = verifyRequestData(
+        { id: cardID, ...cardInfo },
+        expectedProps
+    );
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
         const updatedCard = await Card.findByIdAndUpdate(cardID, cardInfo, {

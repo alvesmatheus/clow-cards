@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import Reading from '../models/Reading';
 
-import { checkMissingKeys, checkUndefinedValue } from '../utils';
+import { verifyRequestData } from '../utils/validation';
 
 export const countReadings = async (filters) => {
     try {
@@ -14,11 +14,9 @@ export const countReadings = async (filters) => {
 };
 
 export const createReading = async (readingInfo) => {
-    const expectedKeys = ['date', 'cards'];
-    const missingKeys = checkMissingKeys(readingInfo, expectedKeys);
-    if (missingKeys) {
-        throw new Error(missingKeys);
-    }
+    const expectedProps = ['date', 'cards'];
+    const errorMsg = verifyRequestData(readingInfo, expectedProps);
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
         const cardsIDs = readingInfo.cards.map(
@@ -37,10 +35,9 @@ export const createReading = async (readingInfo) => {
 };
 
 export const deleteReading = async (readingID) => {
-    const missingValue = checkUndefinedValue(readingID, 'Reading ID');
-    if (missingValue) {
-        throw new Error(missingValue);
-    }
+    const expectedProps = ['id'];
+    const errorMsg = verifyRequestData({ id: readingID }, expectedProps);
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
         const deletedReading = await Reading.findByIdAndDelete(readingID);
@@ -51,10 +48,9 @@ export const deleteReading = async (readingID) => {
 };
 
 export const getReading = async (readingID) => {
-    const missingValue = checkUndefinedValue(readingID, 'Reading ID');
-    if (missingValue) {
-        throw new Error(missingValue);
-    }
+    const expectedProps = ['id'];
+    const errorMsg = verifyRequestData({ id: readingID }, expectedProps);
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
         const reading = await Reading.findById(readingID);
@@ -70,7 +66,6 @@ export const getReadingsList = async (query) => {
             .sort(query.sorting)
             .skip(query.skip)
             .limit(query.limit);
-
         return readings;
     } catch (error) {
         throw new Error(error.message);
@@ -78,20 +73,21 @@ export const getReadingsList = async (query) => {
 };
 
 export const updateReading = async (readingID, readingInfo) => {
-    const expectedKeys = ['method', 'date', 'cards', 'comments'];
-    const missingKeys = checkMissingKeys(readingInfo, expectedKeys);
-    if (missingKeys) {
-        throw new Error(missingKeys);
-    }
+    const expectedProps = ['id', 'method', 'date', 'cards', 'comments'];
+    const errorMsg = verifyRequestData(
+        { id: readingID, ...readingInfo },
+        expectedProps
+    );
+    if (errorMsg) throw new Error(errorMsg);
 
     try {
-        const cardsIDs = readingInfo.cards.map(
+        const cardIDs = readingInfo.cards.map(
             (card) => new mongoose.Types.ObjectId(card)
         );
 
         const updatedReading = await Reading.findByIdAndUpdate(
             readingID,
-            { ...readingInfo, cards: cardsIDs },
+            { ...readingInfo, cards: cardIDs },
             {
                 new: true,
             }
