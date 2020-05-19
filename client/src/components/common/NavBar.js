@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './NavBar.css';
 
@@ -6,29 +7,29 @@ const NavBar = () => {
     return (
         <div className='nav-bar'>
             <div className='nav-bar__brand'>
-                <a href='#' className='nav-bar-brand__text'>
+                <Link to='/' className='nav-bar-brand__text'>
                     Clow Cards
-                </a>
+                </Link>
             </div>
             <div className='nav-bar__items'>
                 <nav className='nav-bar__items--left'>
-                    <a href='#' className='nav-bar-items__link'>
+                    <Link to='/' className='nav-bar-items__link'>
                         Get a Reading
-                    </a>
-                    <a href='#' className='nav-bar-items__link'>
+                    </Link>
+                    <Link to='/' className='nav-bar-items__link'>
                         Card of the Day
-                    </a>
-                    <a href='#' className='nav-bar-items__link'>
+                    </Link>
+                    <Link to='/cards' className='nav-bar-items__link'>
                         Meet the Cards
-                    </a>
+                    </Link>
                 </nav>
                 <nav className='nav-bar__items--right'>
-                    <a href='#' className='nav-bar-items__link'>
+                    <Link to='/' className='nav-bar-items__link'>
                         Sign In
-                    </a>
-                    <a href='#' className='nav-bar-items__link'>
+                    </Link>
+                    <Link to='/' className='nav-bar-items__link'>
                         Register
-                    </a>
+                    </Link>
                 </nav>
             </div>
         </div>
