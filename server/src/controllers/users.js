@@ -1,17 +1,5 @@
 import * as service from '../services/users';
 
-export const createUser = async (req, res) => {
-    const { fname, sname, email, password, pswdCheck } = req.body;
-    const userInfo = { fname, sname, email, password, pswdCheck };
-
-    try {
-        const newUser = await service.createUser(userInfo);
-        return res.status('201').json(newUser);
-    } catch (error) {
-        return res.status('400').json({ error: error.message });
-    }
-};
-
 export const deleteUser = async (req, res) => {
     const userID = req.params.id;
 
@@ -23,12 +11,24 @@ export const deleteUser = async (req, res) => {
     }
 };
 
-export const loginUser = async (req, res) => {
+export const registerUser = async (req, res) => {
+    const { fname, sname, email, password, pswdCheck } = req.body;
+    const userInfo = { fname, sname, email, password, pswdCheck };
+
+    try {
+        const newUser = await service.registerUser(userInfo);
+        return res.status('201').json(newUser);
+    } catch (error) {
+        return res.status('400').json({ error: error.message });
+    }
+};
+
+export const signInUser = async (req, res) => {
     const { email, password } = req.body;
     const userInfo = { email, password };
 
     try {
-        const user = await service.loginUser(userInfo);
+        const user = await service.signInUser(userInfo);
         return res.status('200').json(user);
     } catch (error) {
         return res.status('400').json({ error: error.message });

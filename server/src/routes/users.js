@@ -7,8 +7,8 @@ import * as controller from '../controllers/users';
 
 const router = express.Router();
 
-router.post('/login', controller.loginUser);
-router.post('/signup', controller.createUser);
+router.post('/signin', controller.signInUser);
+router.post('/register', controller.registerUser);
 
 router.delete('/:id', verifyToken, verifyUser, controller.deleteUser);
 router.put('/:id', verifyToken, verifyUser, controller.updateUser);

@@ -6,7 +6,21 @@ import User from '../models/User';
 import { createToken } from '../utils/jwt';
 import { trimObjectValues, verifyRequestData } from '../utils/validation';
 
-export const createUser = async (userInfo) => {
+export const deleteUser = async (userID) => {
+    const expectedProps = ['id'];
+    const errorMsg = verifyRequestData({ id: userID }, expectedProps);
+    if (errorMsg) throw new Error(errorMsg);
+
+    try {
+        const deletedUser = await User.findByIdAndDelete(userID);
+        const { password, ...publicInfo } = deletedUser;
+        return publicInfo;
+    } catch (error) {
+        throw new Error(error.message);
+    }
+};
+
+export const registerUser = async (userInfo) => {
     const expectedProps = ['fname', 'sname', 'email', 'password', 'pswdCheck'];
     const errorMsg = verifyRequestData(userInfo, expectedProps);
     if (errorMsg) throw new Error(errorMsg);
@@ -26,43 +40,30 @@ export const createUser = async (userInfo) => {
         };
 
         const newUser = await User.create({ ...userFullInfo });
-        return { ...newUser._doc, password: null };
+        return { user: newUser._doc._id }
     } catch (error) {
         throw new Error(error.message);
     }
 };
 
-export const deleteUser = async (userID) => {
-    const expectedProps = ['id'];
-    const errorMsg = verifyRequestData({ id: userID }, expectedProps);
-    if (errorMsg) throw new Error(errorMsg);
-
-    try {
-        const deletedUser = await User.findByIdAndDelete(userID);
-        return { ...deletedUser._doc, password: null };
-    } catch (error) {
-        throw new Error(error.message);
-    }
-};
-
-export const loginUser = async (userInfo) => {
+export const signInUser = async (userInfo) => {
     const expectedProps = ['email', 'password'];
     const errorMsg = verifyRequestData(userInfo, expectedProps);
     if (errorMsg) throw new Error(errorMsg);
 
     try {
-        const loginInfo = trimObjectValues(userInfo);
-        const user = await User.findOne({ email: loginInfo.email });
+        const signInInfo = trimObjectValues(userInfo);
+        const user = await User.findOne({ email: signInInfo.email });
         if (!user) throw new Error(`This user does not exist.`);
 
         const pswdMatch = await bcrypt.compare(
-            loginInfo.password,
+            signInInfo.password,
             user.password
         );
         if (!pswdMatch) throw new Error(`Incorrect password.`);
 
         const token = createToken({ id: user._doc._id });
-        return { token, ...user._doc, password: null };
+        return { token, user: user._doc._id };
     } catch (error) {
         throw new Error(error.message);
     }
@@ -86,7 +87,8 @@ export const updateUser = async (userID, userInfo) => {
             }
         );
 
-        return { ...updatedUser._doc, password: null };
+        const { password, ...publicInfo } = updatedUser;
+        return publicInfo;
     } catch (error) {
         throw new Error(error.message);
     }
