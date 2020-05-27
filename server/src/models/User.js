@@ -21,10 +21,6 @@ const UserSchema = new Schema({
         required: true,
         minlength: 5,
     },
-    readings: {
-        type: [{ type: Schema.Types.ObjectId, ref: 'readings' }],
-        default: [],
-    },
 });
 
 const User = model('User', UserSchema);
