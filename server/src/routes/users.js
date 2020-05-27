@@ -8,9 +8,10 @@ import * as controller from '../controllers/users';
 const router = express.Router();
 
 router.post('/signin', controller.signInUser);
-router.post('/register', controller.registerUser);
+router.post('/register', controller.createUser);
 
-router.delete('/:id', verifyToken, verifyUser, controller.deleteUser);
-router.put('/:id', verifyToken, verifyUser, controller.updateUser);
+router.get('/:user', verifyToken, verifyUser, controller.getUser);
+router.patch('/:user', verifyToken, verifyUser, controller.updateUser);
+router.delete('/:user', verifyToken, verifyUser, controller.deleteUser);
 
 export default router;
