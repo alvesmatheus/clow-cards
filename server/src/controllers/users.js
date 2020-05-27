@@ -1,49 +1,62 @@
+import { OK, CREATED } from 'http-status-codes';
+
 import * as service from '../services/users';
 
-export const deleteUser = async (req, res) => {
-    const userID = req.params.id;
-
-    try {
-        const deletedUser = await service.deleteUser(userID);
-        return res.status('200').json(deletedUser);
-    } catch (error) {
-        return res.status('400').json({ error: error.message });
-    }
-};
-
-export const registerUser = async (req, res) => {
+export const createUser = (req, res) => {
     const { fname, sname, email, password, pswdCheck } = req.body;
     const userInfo = { fname, sname, email, password, pswdCheck };
 
-    try {
-        const newUser = await service.registerUser(userInfo);
-        return res.status('201').json(newUser);
-    } catch (error) {
-        return res.status('400').json({ error: error.message });
-    }
+    return service
+        .createUser(userInfo)
+        .then((newUser) => res.status(CREATED).json(newUser))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const signInUser = async (req, res) => {
+export const deleteUser = (req, res) => {
+    const userId = req.params.user;
+
+    return service
+        .deleteUser(userId)
+        .then((deletedUser) => res.status(OK).json(deletedUser))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
+};
+
+export const getUser = (req, res) => {
+    const userId = req.params.user;
+
+    return service
+        .getUser(userId)
+        .then((user) => res.status(OK).json(user))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
+};
+
+export const signInUser = (req, res) => {
     const { email, password } = req.body;
     const userInfo = { email, password };
 
-    try {
-        const user = await service.signInUser(userInfo);
-        return res.status('200').json(user);
-    } catch (error) {
-        return res.status('400').json({ error: error.message });
-    }
+    return service
+        .signInUser(userInfo)
+        .then((userAuth) => res.status(OK).json(userAuth))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const updateUser = async (req, res) => {
-    const userID = req.body.id;
-    const { fname, sname, email, password, readings } = req.body;
-    const userInfo = { fname, sname, email, password, readings };
+export const updateUser = (req, res) => {
+    const userId = req.params.user;
+    const { fname, sname, email } = req.body;
+    const userInfo = { fname, sname, email };
 
-    try {
-        const updatedUser = await service.updateUser(userID, userInfo);
-        return res.status('200').json(updatedUser);
-    } catch (error) {
-        return res.status('400').json({ error: error.message });
-    }
+    return service
+        .updateUser(userId, userInfo)
+        .then((updatedUser) => res.status(OK).json(updatedUser))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
