@@ -1,14 +1,16 @@
+import { BAD_REQUEST, UNAUTHORIZED } from 'http-status-codes';
+
 const verifyUser = (req, res, next) => {
-    const userID = req.params.id;
-    const userCheck = req.body.id;
+    const { user } = req.params;
+    const userVerifier = req.body.user;
 
-    if (!userID)
+    if (!user)
         return res
-            .status('400')
-            .json({ error: `The user ID was not provided.` });
+            .status(BAD_REQUEST)
+            .json({ error: 'The user id was not provided.' });
 
-    if (userID.trim() !== userCheck)
-        return res.status('401').json({
+    if (user.trim() !== userVerifier)
+        return res.status(UNAUTHORIZED).json({
             error: `Access denied. You don't have permission to perform this action.`,
         });
 
