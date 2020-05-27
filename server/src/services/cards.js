@@ -1,82 +1,63 @@
+import { INTERNAL_SERVER_ERROR } from 'http-status-codes';
+import createError from 'http-errors';
+
 import Card from '../models/Card';
 
-import { verifyRequestData } from '../utils/validation';
+import { validators, validate } from '../utils/validation';
 
 export const countCards = async (filters) => {
     try {
         const totalCards = await Card.countDocuments(filters);
         return { count: totalCards };
     } catch (error) {
-        throw new Error(error.message);
+        throw createError(INTERNAL_SERVER_ERROR, error.message);
     }
 };
 
 export const createCard = async (cardInfo) => {
-    const expectedProps = ['name', 'sign', 'origin'];
-    const errorMsg = verifyRequestData(cardInfo, expectedProps);
-    if (errorMsg) throw new Error(errorMsg);
-
     try {
-        const newCard = await Card.create({ ...cardInfo });
-        return newCard;
+        const card = await validate(cardInfo, validators.create.CARD);
+        return Card.create({ ...card });
     } catch (error) {
-        throw new Error(error.message);
+        throw createError(error.status || INTERNAL_SERVER_ERROR, error.message);
     }
 };
 
-export const deleteCard = async (cardID) => {
-    const expectedProps = ['id'];
-    const errorMsg = verifyRequestData({ id: cardID }, expectedProps);
-    if (errorMsg) throw new Error(errorMsg);
-
+export const deleteCard = async (cardId) => {
     try {
-        const deletedCard = await Card.findByIdAndDelete(cardID);
-        return deletedCard;
+        const id = await validate(cardId, validators.check.ID);
+        return Card.findByIdAndDelete(id);
     } catch (error) {
-        throw new Error(error.message);
+        throw createError(error.status || INTERNAL_SERVER_ERROR, error.message);
     }
 };
 
-export const getCard = async (cardID) => {
-    const expectedProps = ['id'];
-    const errorMsg = verifyRequestData({ id: cardID }, expectedProps);
-    if (errorMsg) throw new Error(errorMsg);
-
+export const getCard = async (cardId) => {
     try {
-        const card = await Card.findById(cardID);
-        return card;
+        const id = await validate(cardId, validators.check.ID);
+        return Card.findById(id);
     } catch (error) {
-        throw new Error(error.message);
+        throw createError(error.status || INTERNAL_SERVER_ERROR, error.message);
     }
 };
 
-export const getCardsList = async (query) => {
+export const getCardsList = (query) => {
     try {
-        const cards = await Card.find(query.filters)
+        return Card.find(query.filters)
             .sort(query.sorting)
             .skip(query.skip)
             .limit(query.limit);
-        return cards;
     } catch (error) {
-        throw new Error(error.message);
+        throw createError(INTERNAL_SERVER_ERROR, error.message);
     }
 };
 
-export const updateCard = async (cardID, cardInfo) => {
-    const expectedProps = ['id', 'name', 'sign', 'origin', 'image', 'meaning'];
-    const errorMsg = verifyRequestData(
-        { id: cardID, ...cardInfo },
-        expectedProps
-    );
-    if (errorMsg) throw new Error(errorMsg);
-
+export const updateCard = async (cardId, cardInfo) => {
     try {
-        const updatedCard = await Card.findByIdAndUpdate(cardID, cardInfo, {
-            new: true,
-        });
-
-        return updatedCard;
+        const id = await validate(cardId, validators.check.ID);
+        const card = await validate(cardInfo, validators.update.CARD);
+        return Card.findByIdAndUpdate(id, card, { new: true });
     } catch (error) {
-        throw new Error(error.message);
+        throw createError(error.status || INTERNAL_SERVER_ERROR, error.message);
     }
 };
