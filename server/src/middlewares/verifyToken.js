@@ -7,7 +7,7 @@ const { secret } = config.jwt;
 
 const verifyToken = (req, res, next) => {
     try {
-        const decodedData = jwt.verify(req.body.token, secret);
+        const decodedData = jwt.verify(req.header('Authorization'), secret);
         req.body.user = decodedData.user;
         return next();
     } catch (error) {
