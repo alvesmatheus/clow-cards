@@ -13,11 +13,3 @@ body {
     color: #361714;
     font-family: 'Lato', sans-serif;
 }
-
-.nav-bar {
-    min-height: 8vh;
-}
-
-.main-content {
-    min-height: 92vh;
-}

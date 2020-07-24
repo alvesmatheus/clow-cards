@@ -1,0 +1,18 @@
+.sign-in-page {
+    min-height: 100%;
+}
+
+.sign-in-page__title {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 3rem;
+    text-align: center;
+}
+
+.sign-in-page__form {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    padding: 2rem 0;
+}

@@ -6,12 +6,13 @@ import mongoose from 'mongoose';
 import path from 'path';
 
 import config from './config';
-import { cardsRouter, readingsRouter } from './routes';
+import { cardsRouter, readingsRouter, usersRouter } from './routes';
 
 const app = express();
+const { databaseURI } = config.mongoDB;
 const { port } = config.server;
 
-mongoose.connect(config.mongoDB.DATABASE_URI, {
+mongoose.connect(databaseURI, {
     useNewUrlParser: true,
     useFindAndModify: false,
     useUnifiedTopology: true,
@@ -31,6 +32,7 @@ app.use(logger('dev'));
 
 app.use('/cards', cardsRouter);
 app.use('/readings', readingsRouter);
+app.use('/users', usersRouter);
 
 app.listen(port, () => {
     console.log(`Server listening on port ${port}!`);

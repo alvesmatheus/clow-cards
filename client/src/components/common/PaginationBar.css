@@ -15,9 +15,14 @@
     background-color: #f5a254;
     border: 0.05rem solid #361714;
     border-radius: 2rem;
+    cursor: pointer;
     display: inline-block;
     margin: 0 0.5rem;
     padding: 0.5rem 0.8rem;
+}
+
+.paginate-bar__break {
+    cursor: default;
 }
 
 .paginate-bar-page__a,

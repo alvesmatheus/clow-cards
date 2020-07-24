@@ -12,7 +12,7 @@ const RadioInputForm = ({ id, options, currentValue, onChange }) => {
                     className='radio-input-form__label'
                 >
                     <input
-                        id={id}
+                        id={`${id}-${option.value}`}
                         type='radio'
                         value={option.value}
                         checked={currentValue === option.value}

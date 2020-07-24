@@ -16,26 +16,26 @@ const CardsSorting = ({ sorting, setSorting }) => {
     ];
 
     const handleOrderChange = (e) => {
-        setSorting({ ...sorting, order: e.target.value });
         e.preventDefault();
+        setSorting({ ...sorting, order: e.target.value });
     };
 
     const handleOrderByChange = (e) => {
-        setSorting({ ...sorting, orderBy: e.target.value });
         e.preventDefault();
+        setSorting({ ...sorting, orderBy: e.target.value });
     };
 
     return (
         <div className='cards-sorting-form'>
             <SelectForm
-                id={'cardOrderBy'}
-                label={'Order By:'}
+                id='cardOrderBy'
+                label='Order By:'
                 options={orderByOptions}
                 currentValue={sorting.orderBy}
                 onChange={handleOrderByChange}
             />
             <RadioInputForm
-                id={'cardOrder'}
+                id='cardOrder'
                 options={orderOptions}
                 currentValue={sorting.order}
                 onChange={handleOrderChange}

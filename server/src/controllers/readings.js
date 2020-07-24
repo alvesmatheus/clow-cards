@@ -1,71 +1,91 @@
+import { OK, CREATED } from 'http-status-codes';
+
 import * as service from '../services/readings';
 
-export const countReadings = async (req, res) => {
+export const countReadings = (req, res) => {
+    const { from, to } = req.query;
     const filters = {
-        method: req.query.method,
-        date: {
-            $gte: req.query.from,
-            $lte: req.query.to,
-        },
+        user: req.body.user,
     };
 
-    const totalReadings = await service.countReadings(filters);
-    return res.status('200').json(totalReadings);
+    if (from && to) filters.date = { $gte: new Date(from), $lte: new Date(to) };
+
+    return service
+        .countReadings(filters)
+        .then((totalReadings) => res.status(OK).json(totalReadings))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const createReading = async (req, res) => {
-    const { method, date, cards, comments } = req.body;
-    const readingInfo = { method, date, cards, comments };
+export const createReading = (req, res) => {
+    const { user } = req.body;
 
-    const newReading = await service.createReading(readingInfo);
-
-    return res.status('201').json(newReading);
+    return service
+        .createReading(user)
+        .then((newReading) => res.status(CREATED).json(newReading))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const deleteReading = async (req, res) => {
-    const readingID = req.params.id;
-    const deletedReading = await service.deleteReading(readingID);
+export const deleteReading = (req, res) => {
+    const readingId = req.params.id;
+    const userId = req.body.user;
 
-    return res.status('200').json(deletedReading);
+    return service
+        .deleteReading(readingId, userId)
+        .then((deletedReading) => res.status(OK).json(deletedReading))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const getReading = async (req, res) => {
-    const readingID = req.params.id;
-    const reading = await service.getReading(readingID);
+export const getReading = (req, res) => {
+    const readingId = req.params.id;
+    const userId = req.body.user;
 
-    return res.status('200').json(reading);
+    return service
+        .getReading(readingId, userId)
+        .then((reading) => res.status(OK).json(reading))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const getReadingsList = async (req, res) => {
+export const getReadingsList = (req, res) => {
+    const { from, to, offset, limit } = req.query;
     const query = {
         filters: {
-            method: req.query.method,
-            date: {
-                $gte: req.query.from,
-                $lte: req.query.to,
-            },
+            user: req.body.user,
         },
         sorting: {
             data: 'desc',
         },
-        skip: parseInt(req.query.offset, 10) || 0,
-        limit: parseInt(req.query.limit, 10) || 20,
+        skip: parseInt(offset, 10) || 0,
+        limit: parseInt(limit, 10) || 20,
     };
 
-    if (!query.filters.date.$gte || !query.filters.date.$lte)
-        delete query.filters.date;
+    if (from && to)
+        query.filters.date = { $gte: new Date(from), $lte: new Date(to) };
 
-    const readingsList = await service.getReadingsList(query);
-
-    return res.status('200').json(readingsList);
+    return service
+        .getReadingsList(query)
+        .then((readingsList) => res.status(OK).json(readingsList))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const updateReading = async (req, res) => {
-    const readingID = req.params.id;
-    const { method, date, cards, comments } = req.body;
-    const readingInfo = { method, date, cards, comments };
+export const updateReading = (req, res) => {
+    const readingId = req.params.id;
+    const userId = req.body.user;
+    const readingInfo = { comments: req.body.comments };
 
-    const updatedReading = await service.updateReading(readingID, readingInfo);
-
-    return res.status('200').json(updatedReading);
+    return service
+        .updateReading(readingId, userId, readingInfo)
+        .then((updatedReading) => res.status(OK).json(updatedReading))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };

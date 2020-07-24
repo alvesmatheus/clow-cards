@@ -1,51 +1,47 @@
-a {
-    color: #361714;
-    text-decoration: none;
-}
-
 .nav-bar {
     background-color: #f5a254;
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
     display: grid;
+    min-height: 8vh;
     grid-template-columns: 1fr 5fr;
 }
 
 .nav-bar__brand {
     align-items: center;
+    color: #361714;
     display: flex;
     justify-content: center;
-}
-
-.nav-bar-brand__text {
-    color: #361714;
     font-family: 'Libre Baskerville', sans-serif;
     font-size: 2rem;
     font-weight: bold;
+    text-decoration: none;
 }
 
-.nav-bar__items {
+.nav-bar__wrapper {
     align-items: center;
     display: flex;
     padding: 0 2.5rem 0 3.5rem;
 }
 
-.nav-bar__items--left,
-.nav-bar__items--right {
+.nav-bar__links--left,
+.nav-bar__links--right {
     display: flex;
     font-family: 'Libre Baskerville', sans-serif;
     font-size: 1rem;
     font-weight: bold;
 }
 
-.nav-bar__items--right {
+.nav-bar__links--right {
     margin-left: auto;
 }
 
-.nav-bar-items__link {
+.nav-bar-link,
+.nav-bar-link:hover {
+    color: #361714;
     margin-right: 3rem;
+    text-decoration: none;
 }
 
-.nav-bar-items__link:hover {
+.nav-bar-link:hover {
     color: #fff9ec;
-    margin-right: 3rem;
 }

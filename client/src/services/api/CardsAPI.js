@@ -23,14 +23,14 @@ export const getCards = (filters, sorting, pagination) => {
             },
         })
         .then((response) => response.data)
-        .catch((error) => console.error(error));
+        .catch((error) => error.response.data);
 };
 
-export const getCardByID = (cardID) => {
+export const getCardById = (cardId) => {
     return cardsAPI
-        .get(`/${cardID}`)
+        .get(`/${cardId}`)
         .then((response) => response.data)
-        .catch((error) => console.error(error));
+        .catch((error) => error.response.data);
 };
 
 export const getCardImageURL = (cardURI) => {
@@ -43,5 +43,5 @@ export const getTotalCards = (filters) => {
             params: { ...filters },
         })
         .then((response) => response.data.count)
-        .catch((error) => console.error(error));
+        .catch((error) => error.response.data);
 };

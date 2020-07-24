@@ -1,40 +1,57 @@
+import { OK, CREATED } from 'http-status-codes';
+
 import * as service from '../services/cards';
 
-export const countCards = async (req, res) => {
+export const countCards = (req, res) => {
     const filters = {
         name: new RegExp(req.query.name || '.+', 'i'),
         sign: new RegExp(req.query.sign || '.+', 'i'),
         origin: new RegExp(req.query.origin || '.+', 'i'),
     };
 
-    const totalCards = await service.countCards(filters);
-    return res.status('200').json(totalCards);
+    return service
+        .countCards(filters)
+        .then((totalCards) => res.status(OK).json(totalCards))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const createCard = async (req, res) => {
+export const createCard = (req, res) => {
     const { name, sign, origin, image, meaning } = req.body;
     const cardInfo = { name, sign, origin, image, meaning };
 
-    const newCard = await service.createCard(cardInfo);
-
-    return res.status('201').json(newCard);
+    return service
+        .createCard(cardInfo)
+        .then((newCard) => res.status(CREATED).json(newCard))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const deleteCard = async (req, res) => {
-    const cardID = req.params.id;
-    const deletedCard = await service.deleteCard(cardID);
+export const deleteCard = (req, res) => {
+    const cardId = req.params.id;
 
-    return res.status('200').json(deletedCard);
+    return service
+        .deleteCard(cardId)
+        .then((deletedCard) => res.status(OK).json(deletedCard))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const getCard = async (req, res) => {
-    const cardID = req.params.id;
-    const card = await service.getCard(cardID);
+export const getCard = (req, res) => {
+    const cardId = req.params.id;
 
-    return res.status('200').json(card);
+    return service
+        .getCard(cardId)
+        .then((card) => res.status(OK).json(card))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const getCardsList = async (req, res) => {
+export const getCardsList = (req, res) => {
     const query = {
         filters: {
             name: new RegExp(req.query.name || '.+', 'i'),
@@ -50,17 +67,23 @@ export const getCardsList = async (req, res) => {
     const orderBy = req.query.orderBy || 'name';
     query.sorting[orderBy] = order;
 
-    const cardsList = await service.getCardsList(query);
-
-    return res.status('200').json(cardsList);
+    return service
+        .getCardsList(query)
+        .then((cardsList) => res.status(OK).json(cardsList))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };
 
-export const updateCard = async (req, res) => {
-    const cardID = req.params.id;
+export const updateCard = (req, res) => {
+    const cardId = req.params.id;
     const { name, sign, origin, image, meaning } = req.body;
     const cardInfo = { name, sign, origin, image, meaning };
 
-    const updatedCard = await service.updateCard(cardID, cardInfo);
-
-    return res.status('200').json(updatedCard);
+    return service
+        .updateCard(cardId, cardInfo)
+        .then((updatedCard) => res.status(OK).json(updatedCard))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
 };

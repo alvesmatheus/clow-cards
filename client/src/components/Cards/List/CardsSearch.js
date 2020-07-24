@@ -10,16 +10,16 @@ const CardsSearch = ({ filters, setFilters, pagination, setPagination }) => {
     ];
 
     const handleNameChange = (e) => {
-        setFilters({ ...filters, name: e.target.value });
         e.preventDefault();
+        setFilters({ ...filters, name: e.target.value });
     };
 
     const handlePerPageChange = (e) => {
+        e.preventDefault();
         setPagination({
             page: 0,
-            perPage: parseInt(e.target.value),
+            perPage: parseInt(e.target.value, 10),
         });
-        e.preventDefault();
     };
 
     return (
@@ -33,11 +33,11 @@ const CardsSearch = ({ filters, setFilters, pagination, setPagination }) => {
                         type='text'
                         value={filters.name}
                         placeholder='Search for a card...'
-                        onChange={(e) => handleNameChange(e)}
+                        onChange={handleNameChange}
                     />
                 </label>
             </div>
-            <span className='cards-list__title'>Clow Cards</span>
+            <h1 className='cards-list__title'>Clow Cards</h1>
             <form className='per-page'>
                 <label htmlFor='cardsPerPage'>
                     <span className='per-page-label__text'>Show</span>
@@ -45,7 +45,7 @@ const CardsSearch = ({ filters, setFilters, pagination, setPagination }) => {
                         id='cardsPerPage'
                         className='per-page__select'
                         value={pagination.perPage}
-                        onChange={(e) => handlePerPageChange(e)}
+                        onChange={handlePerPageChange}
                     >
                         {perPageOptions.map((option) => (
                             <option key={option.text} value={option.value}>

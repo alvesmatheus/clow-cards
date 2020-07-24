@@ -16,29 +16,29 @@ const CardsFilters = ({ filters, setFilters, pagination, setPagination }) => {
     ];
 
     const handleSignChange = (e) => {
+        e.preventDefault();
         setFilters({ ...filters, sign: e.target.value });
         setPagination({ ...pagination, page: 0 });
-        e.preventDefault();
     };
 
     const handleOriginChange = (e) => {
+        e.preventDefault();
         setFilters({ ...filters, origin: e.target.value });
         setPagination({ ...pagination, page: 0 });
-        e.preventDefault();
     };
 
     return (
         <div className='cards-filters'>
             <SelectForm
-                id={'cardSign'}
-                label={'Sign:'}
+                id='cardSign'
+                label='Sign:'
                 options={signOptions}
                 defaultValue={filters.sign}
                 onChange={handleSignChange}
             />
             <SelectForm
-                id={'cardOrigin'}
-                label={'Origin:'}
+                id='cardOrigin'
+                label='Origin:'
                 options={originOptions}
                 defaultValue={filters.origin}
                 onChange={handleOriginChange}

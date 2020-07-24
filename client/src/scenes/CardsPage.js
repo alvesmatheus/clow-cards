@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-import * as CardsAPI from '../services/api/CardsAPI';
-
 import './CardsPage.css';
+
+import { getCards, getTotalCards } from '../services/api/CardsAPI';
 
 import CardsList from '../components/Cards/CardsList';
 import CardsSidebar from '../components/Cards/CardsSidebar';
@@ -14,7 +14,6 @@ const CardsPage = () => {
         sign: '',
         origin: '',
     });
-    const [isLoading, setIsLoading] = useState(true);
     const [pagination, setPagination] = useState({ page: 0, perPage: 10 });
     const [sorting, setSorting] = useState({
         order: 'asc',
@@ -23,17 +22,14 @@ const CardsPage = () => {
     const [totalCards, setTotalCards] = useState(0);
 
     useEffect(() => {
-        CardsAPI.getCards(filters, sorting, pagination).then((cards) => {
-            setCards(cards);
-            setIsLoading(false);
+        getCards(filters, sorting, pagination).then((cardsList) => {
+            setCards(cardsList);
         });
-
-        return setCards([]);
     }, [filters, pagination, sorting]);
 
     useEffect(() => {
-        CardsAPI.getTotalCards(filters).then((totalCards) => {
-            setTotalCards(totalCards);
+        getTotalCards(filters).then((cardsCount) => {
+            setTotalCards(cardsCount);
         });
     }, [filters]);
 
