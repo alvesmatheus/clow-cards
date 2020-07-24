@@ -4,7 +4,7 @@ const standardizeKey = (key) => {
 
 export const getData = (key) => {
     const data = localStorage.getItem(standardizeKey(key));
-    return data ? JSON.parse(data) : undefined;
+    return data ? JSON.parse(data) : null;
 };
 
 export const storeData = (key, data) => {

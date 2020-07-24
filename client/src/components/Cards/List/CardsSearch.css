@@ -8,7 +8,7 @@
 .search-bar {
     background-color: #fff9ec;
     border: 0.05rem solid #5e6472;
-    border-radius: 0.75rem;
+    border-radius: 0.25rem;
     box-sizing: border-box;
     padding: 0.5rem 0.5rem 0.5rem 0.75rem;
 }
@@ -45,7 +45,7 @@
 .per-page__select {
     background-color: #9e6b7e;
     border: 0.05rem solid #361714;
-    border-radius: 0.25rem;
+    border-radius: 0.2rem;
     box-sizing: border-box;
     color: #fff9ec;
     font-family: 'Lato', sans-serif;

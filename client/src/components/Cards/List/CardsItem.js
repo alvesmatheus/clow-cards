@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { getCardImageURL } from '../../../services/api/CardsAPI';
-
 import './CardsItem.css';
+
+import { getCardImageURL } from '../../../services/api/CardsAPI';
 
 const CardsItem = ({ card }) => {
     return (

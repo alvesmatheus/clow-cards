@@ -4,7 +4,7 @@ import './CardsList.css';
 
 import CardsItem from './List/CardsItem';
 import CardsSearch from './List/CardsSearch';
-import PaginationBar from '../common/PaginationBar.js';
+import PaginationBar from '../common/PaginationBar';
 
 const CardsList = ({
     filters,
