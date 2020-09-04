@@ -3,9 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "repository": "https://github.com/alvesmatheus/clow-cards.git",
-  "contributors": [
-    "Matheus Alves <matheus.santos@ccc.ufcg.edu.br> (https://github.com/alvesmatheus)"
-  ],
+  "author": "Matheus Alves <matheus.santos@ccc.ufcg.edu.br> (https://github.com/alvesmatheus)",
   "workspaces": [
     "server",
     "client"
@@ -19,23 +17,6 @@
     "start": "lerna run start --stream"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.0",
-    "@babel/node": "^7.8.7",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.0",
-    "@babel/preset-flow": "^7.9.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.1.0",
-    "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-react-hooks": "^3.0.0",
-    "lerna": "^3.20.2",
-    "nodemon": "^2.0.2",
-    "prettier": "^2.0.2"
+    "lerna": "^3.22.1"
   }
 }
