@@ -8,8 +8,8 @@ const SelectForm = ({ id, label, options, currentValue, onChange }) => {
             <label className='select-form__label' htmlFor={id}>
                 {label}
                 <select
-                    id={id}
                     className='select-form__select'
+                    id={id}
                     value={currentValue}
                     onChange={onChange}
                 >

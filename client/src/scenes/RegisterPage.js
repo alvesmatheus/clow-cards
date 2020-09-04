@@ -6,8 +6,8 @@ import './RegisterPage.css';
 
 import { HOME } from '../constants/routes';
 
-import SubmitButton from '../components/common/SubmitButton';
-import TextInput from '../components/common/TextInput';
+import SubmitButton from '../components/_common/SubmitButton';
+import LabeledTextInput from '../components/_common/LabeledTextInput';
 
 const RegisterPage = ({ register }) => {
     const history = useHistory();
@@ -37,9 +37,9 @@ const RegisterPage = ({ register }) => {
         });
     };
 
-    const handleUserInfoChange = (e) => {
+    const handleUserInfoChange = (e, key) => {
         const newUserInfo = { ...userInfo };
-        newUserInfo[e.target.name] = e.target.value;
+        newUserInfo[key] = e.target.value;
         setUserInfo(newUserInfo);
     };
 
@@ -59,42 +59,42 @@ const RegisterPage = ({ register }) => {
         <div className='register-page'>
             <h1 className='register-page__title'>Register</h1>
             <form className='register-page__form' onSubmit={handleRegister}>
-                <TextInput
+                <LabeledTextInput
                     id='fname'
                     label='First Name'
                     value={userInfo.fname}
                     placeholder='First Name'
-                    onChange={(e) => handleUserInfoChange(e)}
+                    onChange={(e) => handleUserInfoChange(e, 'fname')}
                 />
-                <TextInput
+                <LabeledTextInput
                     id='sname'
                     label='Surname'
                     value={userInfo.sname}
                     placeholder='Surname'
-                    onChange={(e) => handleUserInfoChange(e)}
+                    onChange={(e) => handleUserInfoChange(e, 'sname')}
                 />
-                <TextInput
+                <LabeledTextInput
                     id='email'
                     label='E-mail'
                     value={userInfo.email}
                     placeholder='E-mail'
-                    onChange={(e) => handleUserInfoChange(e)}
+                    onChange={(e) => handleUserInfoChange(e, 'email')}
                 />
-                <TextInput
+                <LabeledTextInput
                     id='password'
                     label='Password'
                     value={userInfo.password}
                     placeholder='Password'
                     isSecret
-                    onChange={(e) => handleUserInfoChange(e)}
+                    onChange={(e) => handleUserInfoChange(e, 'password')}
                 />
-                <TextInput
+                <LabeledTextInput
                     id='pswdCheck'
                     label='Confirm Password'
                     value={userInfo.pswdCheck}
                     placeholder='Confirm Password'
                     isSecret
-                    onChange={(e) => handleUserInfoChange(e)}
+                    onChange={(e) => handleUserInfoChange(e, 'pswdCheck')}
                 />
                 <SubmitButton value='Register' />
             </form>

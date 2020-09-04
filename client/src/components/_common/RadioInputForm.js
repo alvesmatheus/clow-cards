@@ -7,9 +7,9 @@ const RadioInputForm = ({ id, options, currentValue, onChange }) => {
         <form className='radio-input-form'>
             {options.map((option) => (
                 <label
+                    className='radio-input-form__label'
                     key={option.value}
                     htmlFor={id}
-                    className='radio-input-form__label'
                 >
                     <input
                         id={`${id}-${option.value}`}

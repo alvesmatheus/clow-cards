@@ -6,8 +6,8 @@ import './SignInPage.css';
 
 import { HOME } from '../constants/routes';
 
-import SubmitButton from '../components/common/SubmitButton';
-import TextInput from '../components/common/TextInput';
+import SubmitButton from '../components/_common/SubmitButton';
+import LabeledTextInput from '../components/_common/LabeledTextInput';
 
 const SignInPage = ({ signIn }) => {
     const history = useHistory();
@@ -26,9 +26,10 @@ const SignInPage = ({ signIn }) => {
         });
     };
 
-    const handleUserInfoChange = (e) => {
+    const handleUserInfoChange = (e, key) => {
         const currentUserInfo = { ...userInfo };
-        currentUserInfo[e.target.name] = e.target.value;
+        currentUserInfo[key] = e.target.value;
+
         setUserInfo(currentUserInfo);
     };
 
@@ -47,20 +48,20 @@ const SignInPage = ({ signIn }) => {
         <div className='sign-in-page'>
             <h1 className='sign-in-page__title'>Sign In</h1>
             <form className='sign-in-page__form' onSubmit={handleSignIn}>
-                <TextInput
+                <LabeledTextInput
                     id='email'
                     label='E-mail'
                     value={userInfo.email}
                     placeholder='E-mail'
-                    onChange={(e) => handleUserInfoChange(e)}
+                    onChange={(e) => handleUserInfoChange(e, 'email')}
                 />
-                <TextInput
+                <LabeledTextInput
                     id='password'
                     label='Password'
                     value={userInfo.password}
                     placeholder='Password'
                     isSecret
-                    onChange={(e) => handleUserInfoChange(e)}
+                    onChange={(e) => handleUserInfoChange(e, 'password')}
                 />
                 <SubmitButton value='Sign In' />
             </form>

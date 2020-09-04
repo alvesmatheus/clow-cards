@@ -3,15 +3,15 @@ import ReactPaginate from 'react-paginate';
 
 import './PaginationBar.css';
 
-const PaginationBar = ({ totalCards, pagination, setPagination }) => {
-    const pageCount = Math.ceil(totalCards / pagination.perPage);
+const PaginationBar = ({ totalItems, pagination, setPagination }) => {
+    const pageCount = Math.ceil(totalItems / pagination.perPage);
 
     const handlePageChange = (pages) => {
         setPagination({ ...pagination, page: pages.selected });
     };
 
     return (
-        <div>
+        <div className='pagination-bar'>
             {pageCount > 1 && (
                 <ReactPaginate
                     pageCount={pageCount}
