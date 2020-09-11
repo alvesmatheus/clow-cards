@@ -2,7 +2,7 @@ import React from 'react';
 
 import './RadioInputForm.css';
 
-const RadioInputForm = ({ id, options, currentValue, onChange }) => {
+const RadioInputForm = ({ id, options, value, onChange }) => {
     return (
         <form className='radio-input-form'>
             {options.map((option) => (
@@ -15,7 +15,7 @@ const RadioInputForm = ({ id, options, currentValue, onChange }) => {
                         id={`${id}-${option.value}`}
                         type='radio'
                         value={option.value}
-                        checked={currentValue === option.value}
+                        checked={value === option.value}
                         onChange={onChange}
                     />
                     <span className='radio-input-form__label-text'>

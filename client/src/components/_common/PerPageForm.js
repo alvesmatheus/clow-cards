@@ -2,7 +2,7 @@ import React from 'react';
 
 import './PerPageForm.css';
 
-const PerPageForm = ({ id, options, currentValue, onChange }) => {
+const PerPageForm = ({ id, options, value, onChange }) => {
     return (
         <form className='per-page-form'>
             <label className='per-page-form__label' htmlFor={id}>
@@ -10,7 +10,7 @@ const PerPageForm = ({ id, options, currentValue, onChange }) => {
                 <select
                     className='per-page-form__select'
                     id={id}
-                    value={currentValue}
+                    value={value}
                     onChange={onChange}
                 >
                     {options.map((option) => (

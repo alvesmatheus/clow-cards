@@ -29,7 +29,7 @@ const CardListHeader = ({ filters, setFilters, pagination, setPagination }) => {
             <PerPageForm
                 id='cardsPerParge'
                 options={perPageOptions}
-                defaultValue={pagination.perPage}
+                value={pagination.perPage}
                 onChange={handlePerPageChange}
             />
         </div>

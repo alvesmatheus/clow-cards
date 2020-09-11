@@ -29,13 +29,13 @@ const CardSorting = ({ sorting, setSorting }) => {
                 id='cardOrderBy'
                 label='Order By:'
                 options={orderByOptions}
-                currentValue={sorting.orderBy}
+                value={sorting.orderBy}
                 onChange={(e) => handleSortingChange(e, 'orderBy')}
             />
             <RadioInputForm
                 id='cardOrder'
                 options={orderOptions}
-                currentValue={sorting.order}
+                value={sorting.order}
                 onChange={(e) => handleSortingChange(e, 'order')}
             />
         </div>

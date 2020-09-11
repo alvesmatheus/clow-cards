@@ -29,14 +29,14 @@ const CardFilters = ({ filters, setFilters, pagination, setPagination }) => {
                 id='cardSign'
                 label='Sign:'
                 options={signOptions}
-                defaultValue={filters.sign}
+                value={filters.sign}
                 onChange={(e) => handleFiltersChange(e, 'sign')}
             />
             <SelectForm
                 id='cardOrigin'
                 label='Origin:'
                 options={originOptions}
-                defaultValue={filters.origin}
+                value={filters.origin}
                 onChange={(e) => handleFiltersChange(e, 'origin')}
             />
         </div>
