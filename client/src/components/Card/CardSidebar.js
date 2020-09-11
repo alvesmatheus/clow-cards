@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './CardsSidebar.css';
+import './CardSidebar.css';
 
-import CardsFilters from './Sidebar/CardsFilters';
-import CardsSorting from './Sidebar/CardsSorting';
+import CardFilters from './CardSidebar/CardFilters';
+import CardSorting from './CardSidebar/CardSorting';
 
-const CardsSidebar = ({
+const CardSidebar = ({
     filters,
     setFilters,
     sorting,
@@ -15,15 +15,15 @@ const CardsSidebar = ({
 }) => {
     return (
         <div className='cards-sidebar'>
-            <CardsFilters
+            <CardFilters
                 filters={filters}
                 setFilters={setFilters}
                 pagination={pagination}
                 setPagination={setPagination}
             />
-            <CardsSorting sorting={sorting} setSorting={setSorting} />
+            <CardSorting sorting={sorting} setSorting={setSorting} />
         </div>
     );
 };
 
-export default CardsSidebar;
+export default CardSidebar;

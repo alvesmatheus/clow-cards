@@ -1,9 +1,9 @@
 import React from 'react';
 
-import RadioInputForm from '../../common/RadioInputForm';
-import SelectForm from '../../common/SelectForm';
+import RadioInputForm from '../../_common/RadioInputForm';
+import SelectForm from '../../_common/SelectForm';
 
-const CardsSorting = ({ sorting, setSorting }) => {
+const CardSorting = ({ sorting, setSorting }) => {
     const orderOptions = [
         { value: 'asc', text: 'Ascending' },
         { value: 'desc', text: 'Descending' },
@@ -15,33 +15,31 @@ const CardsSorting = ({ sorting, setSorting }) => {
         { value: 'origin', text: 'Origin' },
     ];
 
-    const handleOrderChange = (e) => {
-        e.preventDefault();
-        setSorting({ ...sorting, order: e.target.value });
-    };
+    const handleSortingChange = (e, key) => {
+        console.log(e.target.name);
+        const currentSorting = { ...sorting };
+        currentSorting[key] = e.target.value;
 
-    const handleOrderByChange = (e) => {
-        e.preventDefault();
-        setSorting({ ...sorting, orderBy: e.target.value });
+        setSorting(currentSorting);
     };
 
     return (
-        <div className='cards-sorting-form'>
+        <div className='card-sorting'>
             <SelectForm
                 id='cardOrderBy'
                 label='Order By:'
                 options={orderByOptions}
                 currentValue={sorting.orderBy}
-                onChange={handleOrderByChange}
+                onChange={(e) => handleSortingChange(e, 'orderBy')}
             />
             <RadioInputForm
                 id='cardOrder'
                 options={orderOptions}
                 currentValue={sorting.order}
-                onChange={handleOrderChange}
+                onChange={(e) => handleSortingChange(e, 'order')}
             />
         </div>
     );
 };
 
-export default CardsSorting;
+export default CardSorting;
