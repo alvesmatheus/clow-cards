@@ -20,13 +20,33 @@ The **Clow Cards** is a MERN stack application being developed as part of the *W
 
 > :small_red_triangle_down: This section will be restructured with more details as the application development proceeds.
 
-- List the cards from the Clow deck.
-- Filter cards by their characteristics.
-- Visualize characteristics of each Clow Card.
-- Get the *Card of the Day* using the Clow deck.
-- Get card readings (*cartomancy*) using the Clow deck.
-- Add personal comments to the given readings.
-- Visualize the previous readings and their details.
+### **Meet the Cards**
+
+This page lists the Clow Cards in the deck. It has the following features:
+
+- Filter and reorder the list (using the sidebar) based on cards characteristics, such as name or sign.
+- Choose the number of cards showed per page (using the list header).
+- See detailed information of each Clow Card (by clicking it).
+- Search for a specific card by name (using the search bar).
+
+![](https://i.imgur.com/ytLk91o.png)
+
+### **Get a Reading**
+
+> :heavy_exclamation_mark: Only registered users can access this feature.
+
+This page allows you to see  the list of your card readings and to get new ones using the Clow Cards. It has the following features:
+
+- Get a new card reading with the meaning of all the selected cards (using the upper button).
+- Filter and reorder by date the list of your previous readings (using the sidebar).
+- If you want, add personal comments on your card readings.
+
+### **Card of the Day**
+
+This page allows you to get the Clow Card of the day. It has the following features:
+
+- See the Clow Card of the current day.
+- See detailed informations of the Clow Card of the day, including its meaning.
 
 ## Installation and Usage
 
