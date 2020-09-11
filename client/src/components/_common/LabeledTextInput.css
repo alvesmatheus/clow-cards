@@ -1,10 +1,10 @@
-.text-input {
+.labeled-text-input {
     display: block;
     font-family: 'Libre Baskerville', sans-serif;
     margin: 0.8rem 0;
 }
 
-.text-input__label {
+.labeled-text-input__label {
     display: block;
     font-family: 'Libre Baskerville', sans-serif;
     font-size: 1.25rem;
@@ -12,7 +12,7 @@
     padding-left: 0.6rem;
 }
 
-.text-input__input {
+.labeled-text-input__input {
     border: 0.05rem solid #696969;
     border-radius: 0.25rem;
     color: #361714;
@@ -23,6 +23,6 @@
     width: 25rem;
 }
 
-.text-input__input:focus {
+.labeled-text-input__input:focus {
     outline: none;
 }

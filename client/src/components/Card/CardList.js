@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './CardsList.css';
+import './CardList.css';
 
-import CardsItem from './List/CardsItem';
-import CardsSearch from './List/CardsSearch';
-import PaginationBar from '../common/PaginationBar';
+import CardItem from './CardList/CardItem';
+import CardListHeader from './CardList/CardListHeader';
+import PaginationBar from '../_common/PaginationBar';
 
-const CardsList = ({
+const CardList = ({
     filters,
     setFilters,
     pagination,
@@ -16,19 +16,19 @@ const CardsList = ({
 }) => {
     return (
         <div className='cards-list'>
-            <CardsSearch
+            <CardListHeader
                 filters={filters}
                 setFilters={setFilters}
                 pagination={pagination}
                 setPagination={setPagination}
             />
-            <div className='cards-items-wrapper'>
+            <div className='card-items-wrapper'>
                 {cards.map((card) => (
-                    <CardsItem key={card.name} card={card} />
+                    <CardItem key={card.name} card={card} />
                 ))}
             </div>
             <PaginationBar
-                totalCards={totalCards}
+                totalItems={totalCards}
                 pagination={pagination}
                 setPagination={setPagination}
             />
@@ -36,4 +36,4 @@ const CardsList = ({
     );
 };
 
-export default CardsList;
+export default CardList;

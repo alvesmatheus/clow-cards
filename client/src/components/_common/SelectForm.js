@@ -2,15 +2,15 @@ import React from 'react';
 
 import './SelectForm.css';
 
-const SelectForm = ({ id, label, options, currentValue, onChange }) => {
+const SelectForm = ({ id, label, options, value, onChange }) => {
     return (
         <form className='select-form'>
             <label className='select-form__label' htmlFor={id}>
                 {label}
                 <select
-                    id={id}
                     className='select-form__select'
-                    value={currentValue}
+                    id={id}
+                    value={value}
                     onChange={onChange}
                 >
                     {options.map((option) => (

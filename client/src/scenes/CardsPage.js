@@ -4,8 +4,8 @@ import './CardsPage.css';
 
 import { getCards, getTotalCards } from '../services/api/CardsAPI';
 
-import CardsList from '../components/Cards/CardsList';
-import CardsSidebar from '../components/Cards/CardsSidebar';
+import CardList from '../components/Card/CardList';
+import CardSidebar from '../components/Card/CardSidebar';
 
 const CardsPage = () => {
     const [cards, setCards] = useState([]);
@@ -35,7 +35,7 @@ const CardsPage = () => {
 
     return (
         <div className='cards-page'>
-            <CardsSidebar
+            <CardSidebar
                 filters={filters}
                 setFilters={setFilters}
                 sorting={sorting}
@@ -43,7 +43,7 @@ const CardsPage = () => {
                 pagination={pagination}
                 setPagination={setPagination}
             />
-            <CardsList
+            <CardList
                 cards={cards}
                 filters={filters}
                 setFilters={setFilters}

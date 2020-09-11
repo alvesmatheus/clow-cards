@@ -1,23 +1,19 @@
 import React from 'react';
 
-import './CardsItem.css';
-
 import { getCardImageURL } from '../../../services/api/CardsAPI';
 
-const CardsItem = ({ card }) => {
+const CardItem = ({ card }) => {
     return (
-        <div className='cards-item'>
+        <div className='card-item'>
             <img
                 alt={card.name}
                 key={card.name}
-                className='cards-item__img'
+                className='card-item__img'
                 src={getCardImageURL(card.image)}
                 title={card.name}
-                height='500rem'
             />
-            <span className='cards-item__name'>{card.name}</span>
         </div>
     );
 };
 
-export default CardsItem;
+export default CardItem;
