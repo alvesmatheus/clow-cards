@@ -3,12 +3,8 @@ import ReactPaginate from 'react-paginate';
 
 import './index.css';
 
-const PaginationBar = ({ totalItems, pagination, setPagination }) => {
+const PaginationBar = ({ totalItems, pagination, changePage }) => {
     const pageCount = Math.ceil(totalItems / pagination.perPage);
-
-    const handlePageChange = (pages) => {
-        setPagination({ ...pagination, page: pages.selected });
-    };
 
     return (
         <div className='pagination-bar'>
@@ -21,7 +17,7 @@ const PaginationBar = ({ totalItems, pagination, setPagination }) => {
                     breakLabel='...'
                     nextLabel={<i className='fa fa-forward' />}
                     initialPage={pagination.page}
-                    onPageChange={handlePageChange}
+                    onPageChange={(pages) => changePage(pages.selected)}
                     forcePage={pagination.page}
                     containerClassName='pagination-bar-wrapper'
                     pageClassName='pagination-bar-page'

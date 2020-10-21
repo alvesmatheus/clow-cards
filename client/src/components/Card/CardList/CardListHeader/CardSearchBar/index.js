@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import './index.css';
 
-const CardSearchBar = ({ filters, setFilters }) => {
-    const handleNameChange = (e) => {
-        setFilters({ ...filters, name: e.target.value });
-    };
+import CardListingContext from '../../../../../contexts/CardListing';
+
+const CardSearchBar = () => {
+    const { filters, changeFilters } = useContext(CardListingContext);
 
     return (
         <div className='card-search-bar'>
@@ -15,7 +15,7 @@ const CardSearchBar = ({ filters, setFilters }) => {
                 type='text'
                 value={filters.name}
                 placeholder='Search for a card...'
-                onChange={handleNameChange}
+                onChange={(e) => changeFilters('name', e.target.value)}
             />
         </div>
     );
