@@ -1,0 +1,22 @@
+.submit-button {
+    display: flex;
+    align-items: center;
+    background-color: var(--yellow);
+    border: 0.05rem solid var(--gray);
+    border-radius: 0.15rem;
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.75rem;
+    margin-top: 1.5rem;
+    outline: none;
+    padding: 1rem 3rem;
+    transition: all 0.3s ease 0s;
+}
+
+.submit-button:hover {
+    box-shadow: 0 0.75rem 1.5rem rgba(0, 0, 0, 0.25);
+    transform: translateY(-0.25rem);
+}

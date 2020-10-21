@@ -1,0 +1,24 @@
+.form-label {
+    display: block;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    padding-left: 0.25rem;
+    text-align: left;
+}
+
+.form-select {
+    display: block;
+    background-color: var(--purple);
+    border: 0.05rem solid var(--black);
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    color: var(--white);
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    margin: 0.25rem 0.15rem;
+    outline: none;
+    padding: 0.5rem 0 0.5rem 0.25rem;
+    width: 100%;
+}

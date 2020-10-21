@@ -1,0 +1,19 @@
+.sign-out-button {
+    background-color: var(--yellow);
+    border: 0.05rem solid var(--gray);
+    border-radius: 0.25rem;
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 3rem 0 auto;
+    outline: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease 0s;
+}
+
+.sign-out-button:hover {
+    background-color: var(--purple);
+    border-color: var(--black);
+}

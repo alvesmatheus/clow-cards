@@ -1,0 +1,14 @@
+.radio-input-form {
+    padding: 0.25rem 0 0 0.5rem;
+}
+
+.option-wrapper {
+    display: block;
+    margin-top: 0.75rem;
+    outline: none;
+}
+
+.option-text {
+    margin-left: 0.5rem;
+    padding: 0.5 0 0 0.5rem;
+}

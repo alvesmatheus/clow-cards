@@ -1,0 +1,19 @@
+.card-search-bar {
+    background-color: var(--white);
+    border: 0.05rem solid var(--gray);
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+    padding: 0.5rem 0.5rem 0.5rem 0.75rem;
+}
+
+.search-bar-icon {
+    color: var(--gray);
+    margin-right: 0.5rem;
+}
+
+.search-bar-input {
+    background-color: var(--white);
+    border: none;
+    color: var(--gray);
+    outline: none;
+}

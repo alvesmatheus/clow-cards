@@ -1,0 +1,12 @@
+.card-list {
+    grid-column: 2 / 7;
+    grid-row: 1 / 5;
+    height: 100%;
+    margin: 3rem 4rem 0 2rem;
+}
+
+.card-items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-left: 2.25rem;
+}
