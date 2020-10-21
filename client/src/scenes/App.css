@@ -9,7 +9,7 @@ body {
 }
 
 body {
-    background-color: #f5dabf;
-    color: #361714;
+    background-color: var(--light-yellow);
+    color: var(--black);
     font-family: 'Lato', sans-serif;
 }

@@ -1,0 +1,47 @@
+.nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    background-color: var(--yellow);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.25);
+    min-height: 8vh;
+}
+
+.nav-bar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--black);
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    outline: none;
+    text-decoration: none;
+}
+
+.nav-bar-wrapper {
+    display: flex;
+    align-items: center;
+    padding: 0 2.5rem 0 3.5rem;
+}
+
+.nav-bar-left-links,
+.nav-bar-right-links {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: bold;
+}
+
+.nav-bar-right-links {
+    margin-left: auto;
+}
+
+.nav-bar-link,
+.nav-bar-link:hover {
+    border: none !important;
+    color: var(--black);
+    margin-right: 3rem;
+    text-decoration: none;
+}
+
+.nav-bar-link:hover {
+    color: var(--white);
+}

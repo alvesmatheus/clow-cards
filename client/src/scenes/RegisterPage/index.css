@@ -1,0 +1,21 @@
+.register-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.register-page-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0 2rem 0;
+}
+
+.register-page-title {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+}

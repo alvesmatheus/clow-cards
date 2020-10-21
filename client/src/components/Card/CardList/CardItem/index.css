@@ -1,0 +1,9 @@
+.card-item {
+    margin-bottom: 1.5rem;
+    padding: 0rem 1rem;
+}
+
+.card-image {
+    border-radius: 0.75rem;
+    margin-bottom: 0.25rem;
+}

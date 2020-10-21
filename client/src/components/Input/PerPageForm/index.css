@@ -1,0 +1,21 @@
+.per-page-form {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.select-pre-text {
+    font-weight: bold;
+    margin-right: 0.4rem;
+}
+
+.per-page-select {
+    background-color: var(--purple);
+    border: 0.05rem solid var(--black);
+    border-radius: 0.15rem;
+    box-sizing: border-box;
+    color: var(--white);
+    margin: 0.25rem;
+    outline: none;
+    padding: 0.15rem 1rem 0.15rem 0.25rem;
+}
