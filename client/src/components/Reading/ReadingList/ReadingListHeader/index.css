@@ -1,0 +1,14 @@
+.reading-list-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 1rem 3rem 3.25rem;
+    text-align: center;
+}
+
+.reading-list-title {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.75rem;
+}
