@@ -3,7 +3,13 @@ import { Link, NavLink } from 'react-router-dom';
 
 import './index.css';
 
-import { CARDS, HOME, REGISTER, SIGNIN } from '../../constants/routes';
+import {
+    CARDS,
+    HOME,
+    READINGS,
+    REGISTER,
+    SIGNIN,
+} from '../../constants/routes';
 
 import SignOutButton from '../Button/SignOutButton';
 
@@ -22,8 +28,8 @@ const NavBar = ({ isUnsigned, signOut }) => {
                         Card of the Day
                     </NavLink>
                     {!isUnsigned && (
-                        <NavLink to={HOME} className='nav-bar-link'>
-                            Get a Reading
+                        <NavLink to={READINGS} className='nav-bar-link'>
+                            Your Readings
                         </NavLink>
                     )}
                 </div>

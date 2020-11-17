@@ -1,0 +1,31 @@
+.edit-reading-button {
+    background-color: var(--light-yellow);
+    border: 1px solid var(--black);
+    border-radius: 0.15rem;
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    outline: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.2s ease 0s;
+}
+
+.save-reading-button {
+    background-color: var(--yellow);
+    border: 1px solid var(--black);
+    border-radius: 0.15rem;
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    outline: none;
+    transition: all 0.2s ease 0s;
+}
+
+.edit-reading-button:hover {
+    background-color: var(--yellow);
+}

@@ -23,13 +23,14 @@ const useAuth = () => {
     }, [isUnsigned]);
 
     const getUser = () => {
-        AuthAPI.getUser(getData('user-id'), getData('token')).then(
-            (userData) => {
-                if (userData.error)
-                    return { success: false, error: userData.error };
-                return { success: true, userData };
-            }
-        );
+        const userId = getData('user-id');
+        const token = getData('token');
+
+        return AuthAPI.getUser(userId, token).then((userData) => {
+            if (userData.error)
+                return { success: false, error: userData.error };
+            return { success: true, token, userData };
+        });
     };
 
     const signIn = (signInInfo) => {

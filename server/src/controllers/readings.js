@@ -60,7 +60,7 @@ export const getReadingsList = (req, res) => {
             user: req.body.user,
         },
         sorting: {
-            data: 'desc',
+            date: req.query.order || 'desc',
         },
         skip: parseInt(offset, 10) || 0,
         limit: parseInt(limit, 10) || 20,
