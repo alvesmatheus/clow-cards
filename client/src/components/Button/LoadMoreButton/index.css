@@ -1,0 +1,19 @@
+.load-more-button {
+    background-color: var(--yellow);
+    border: 1px solid var(--black);
+    border-radius: 0.15rem;
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    outline: none;
+    padding: 0.75rem 3rem;
+    transition: all 0.2s ease 0s;
+}
+
+.load-more-button:hover {
+    background-color: var(--purple);
+    color: var(--white);
+}
