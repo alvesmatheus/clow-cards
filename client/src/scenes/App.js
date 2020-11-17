@@ -5,11 +5,12 @@ import { ModalProvider } from 'react-brave-modal';
 import '../constants/colors.css';
 import './App.css';
 
-import { CARDS, REGISTER, SIGNIN } from '../constants/routes';
+import { CARDS, READINGS, REGISTER, SIGNIN } from '../constants/routes';
 
 import useAuth from '../hooks/useAuth';
 
 import CardListingPage from './CardListingPage';
+import ReadingsPage from './ReadingsPage';
 import NavBar from '../components/NavBar';
 import RegisterPage from './RegisterPage';
 import SignInPage from './SignInPage';
@@ -25,6 +26,12 @@ const App = () => {
                     <Switch>
                         <Route exact path={CARDS}>
                             <CardListingPage />
+                        </Route>
+                        <Route exact path={READINGS}>
+                            <ReadingsPage
+                                getUser={auth.getUser}
+                                signOut={auth.signOut}
+                            />
                         </Route>
                         <Route exact path={SIGNIN}>
                             <SignInPage signIn={auth.signIn} />
