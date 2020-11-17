@@ -16,7 +16,9 @@ export const CardListingContext = createContext({
         page: 0,
         perPage: 0,
     },
-    changeCardListing: () => {},
+    changeFilters: () => {},
+    changeSorting: () => {},
+    changePagination: () => {},
 });
 
 export default CardListingContext;
