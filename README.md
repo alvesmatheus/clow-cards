@@ -29,7 +29,7 @@ This page lists the Clow Cards in the deck. It has the following features:
 - See detailed information of each Clow Card (by clicking it).
 - Search for a specific card by name (using the search bar).
 
-![](https://i.imgur.com/ytLk91o.png)
+![](https://i.imgur.com/wycgxz8.jpg)
 
 ### **Get a Reading**
 
@@ -38,8 +38,9 @@ This page lists the Clow Cards in the deck. It has the following features:
 This page allows you to see  the list of your card readings and to get new ones using the Clow Cards. It has the following features:
 
 - Get a new card reading with the meaning of all the selected cards (using the upper button).
-- Filter and reorder by date the list of your previous readings (using the sidebar).
 - If you want, add personal comments on your card readings.
+
+![](https://i.imgur.com/NYS1szd.jpg)
 
 ### **Card of the Day**
 
