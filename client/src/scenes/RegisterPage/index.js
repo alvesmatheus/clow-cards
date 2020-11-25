@@ -8,10 +8,11 @@ import { HOME } from '../../constants/routes';
 
 import LabeledTextInput from '../../components/Input/LabeledTextInput';
 import SubmitButton from '../../components/Button/SubmitButton';
+import DefaultModal from '../../components/Modal/DefaultModal';
 
 const RegisterPage = ({ register }) => {
     const history = useHistory();
-    const { showModal } = useModal();
+    const { showModal, closeModal } = useModal();
 
     const [userInfo, setUserInfo] = useState({
         fname: '',
@@ -24,16 +25,26 @@ const RegisterPage = ({ register }) => {
     const showWelcomeModal = () => {
         showModal({
             type: 'simple',
-            title: 'Welcome!',
-            text: 'Your account was successfully created!',
+            data: (
+                <DefaultModal
+                    headerText='Welcome!'
+                    bodyText='Your account was successfully created!'
+                    closeModal={closeModal}
+                />
+            ),
         });
     };
 
-    const showErrorModal = (text) => {
+    const showErrorModal = (errorText) => {
         showModal({
             type: 'simple',
-            title: 'Oops... Something went wrong!',
-            text,
+            data: (
+                <DefaultModal
+                    headerText='Oops... Something went wrong.'
+                    bodyText={errorText}
+                    closeModal={closeModal}
+                />
+            ),
         });
     };
 
