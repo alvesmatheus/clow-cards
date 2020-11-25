@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useModal } from 'react-brave-modal';
 
 import './index.css';
 
@@ -6,6 +7,7 @@ import { getCardImageURL } from '../../../../services/api/CardsAPI';
 import { editReading } from '../../../../services/api/ReadingsAPI';
 
 import EditReadingButton from '../../../Button/EditReadingButton';
+import CardDetailsModal from '../../../Modal/CardDetailsModal';
 
 const formatDate = (date) => {
     const format = {
@@ -33,9 +35,17 @@ const formatDate = (date) => {
 const ReadingItem = ({ reading }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [comments, setComments] = useState(reading.comments);
+    const { showModal } = useModal();
 
     const onSave = () => {
         editReading(reading._id, comments);
+    };
+
+    const showCardDetails = (card) => {
+        showModal({
+            type: 'simple',
+            data: <CardDetailsModal card={card} />,
+        });
     };
 
     return (
@@ -71,6 +81,7 @@ const ReadingItem = ({ reading }) => {
                         className='reading-card-image'
                         src={getCardImageURL(card.image)}
                         title={card.name}
+                        onClick={() => showCardDetails(card)}
                     />
                 ))}
             </div>

@@ -1,10 +1,22 @@
 import React from 'react';
+import { useModal } from 'react-brave-modal';
 
 import './index.css';
 
 import { getCardImageURL } from '../../../../services/api/CardsAPI';
 
+import CardDetailsModal from '../../../Modal/CardDetailsModal';
+
 const CardItem = ({ card }) => {
+    const { showModal } = useModal();
+
+    const showDetails = () => {
+        showModal({
+            type: 'simple',
+            data: <CardDetailsModal card={card} />,
+        });
+    };
+
     return (
         <div className='card-item'>
             <img
@@ -13,6 +25,7 @@ const CardItem = ({ card }) => {
                 className='card-image'
                 src={getCardImageURL(card.image)}
                 title={card.name}
+                onClick={() => showDetails()}
             />
         </div>
     );
