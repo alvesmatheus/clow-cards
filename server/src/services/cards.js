@@ -1,5 +1,6 @@
 import { INTERNAL_SERVER_ERROR } from 'http-status-codes';
 import createError from 'http-errors';
+import seedrandom from 'seedrandom';
 
 import Card from '../models/Card';
 
@@ -47,6 +48,19 @@ export const getCardsList = (query) => {
             .sort(query.sorting)
             .skip(query.skip)
             .limit(query.limit);
+    } catch (error) {
+        throw createError(INTERNAL_SERVER_ERROR, error.message);
+    }
+};
+
+export const getDailyCard = async () => {
+    try {
+        const todayDate = new Date().setHours(0, 0, 0, 0).toString();
+        const todayNumber = Math.abs(seedrandom(todayDate).int32());
+
+        const allCards = await Card.find({});
+        const dailyCardIndex = todayNumber % allCards.length;
+        return allCards[dailyCardIndex];
     } catch (error) {
         throw createError(INTERNAL_SERVER_ERROR, error.message);
     }

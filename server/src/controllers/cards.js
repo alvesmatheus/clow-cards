@@ -75,6 +75,15 @@ export const getCardsList = (req, res) => {
         );
 };
 
+export const getDailyCard = (req, res) => {
+    return service
+        .getDailyCard()
+        .then((dailyCard) => res.status(OK).json(dailyCard))
+        .catch((error) =>
+            res.status(error.status).json({ error: error.message })
+        );
+};
+
 export const updateCard = (req, res) => {
     const cardId = req.params.id;
     const { name, sign, origin, image, meaning } = req.body;
