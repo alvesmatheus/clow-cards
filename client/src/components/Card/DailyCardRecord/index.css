@@ -1,0 +1,43 @@
+.daily-card-record {
+    display: flex;
+    align-items: space-around;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 80%;
+}
+
+.daily-card-image {
+    border-radius: 1rem;
+    height: 40rem;
+    margin-right: 5rem;
+}
+
+.daily-card-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 40%;
+    padding: 1rem 0;
+}
+
+.daily-card-name {
+    align-self: center;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.daily-card-info {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.daily-card-info-type {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+}

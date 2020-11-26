@@ -1,0 +1,21 @@
+.daily-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    margin: 3rem 0rem 2rem;
+    min-width: 100%;
+}
+
+.daily-card-title {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0.75rem 0 1rem 0;
+}
+
+.daily-card-date {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1.25rem;
+    margin: 0;
+}
