@@ -5,32 +5,10 @@ import './index.css';
 
 import { getCardImageURL } from '../../../../services/api/CardsAPI';
 import { editReading } from '../../../../services/api/ReadingsAPI';
+import { formatDatetime } from '../../../../utils/dateFormat';
 
 import EditReadingButton from '../../../Button/EditReadingButton';
 import CardDetailsModal from '../../../Modal/CardDetailsModal';
-
-const formatDate = (date) => {
-    const format = {
-        weekday: { weekday: 'long' },
-        date: {
-            month: 'long',
-            day: '2-digit',
-            year: 'numeric',
-        },
-        hour: {
-            hour12: false,
-            hour: '2-digit',
-            minute: '2-digit',
-        },
-    };
-
-    const d = new Date(date);
-    const fullDate = new Intl.DateTimeFormat('en', format.date).format(d);
-    const weekday = new Intl.DateTimeFormat('en', format.weekday).format(d);
-    const hour = new Intl.DateTimeFormat('en', format.hour).format(d);
-
-    return `${fullDate} ~ ${weekday}, ${hour}`;
-};
 
 const ReadingItem = ({ reading }) => {
     const [isEditing, setIsEditing] = useState(false);
@@ -51,7 +29,9 @@ const ReadingItem = ({ reading }) => {
     return (
         <div className='reading-item'>
             <div className='reading-item-header'>
-                <div className='reading-date'>{formatDate(reading.date)}</div>
+                <div className='reading-date'>
+                    {formatDatetime(reading.date)}
+                </div>
                 <EditReadingButton
                     isEditing={isEditing}
                     setIsEditing={setIsEditing}
