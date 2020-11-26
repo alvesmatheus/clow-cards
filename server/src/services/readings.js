@@ -15,10 +15,10 @@ const newReading = async () => {
     return cards.map((card) => new mongoose.Types.ObjectId(card._id));
 };
 
-export const countReadings = async (filters) => {
+export const getCollectionInfo = async (filters) => {
     try {
         const totalReadings = await Reading.countDocuments({ ...filters });
-        return { count: totalReadings };
+        return { totalDocuments: totalReadings };
     } catch (error) {
         throw createError(INTERNAL_SERVER_ERROR, error.message);
     }

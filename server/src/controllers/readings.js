@@ -2,7 +2,7 @@ import { OK, CREATED } from 'http-status-codes';
 
 import * as service from '../services/readings';
 
-export const countReadings = (req, res) => {
+export const getCollectionInfo = (req, res) => {
     const { from, to } = req.query;
     const filters = {
         user: req.body.user,
@@ -11,7 +11,7 @@ export const countReadings = (req, res) => {
     if (from && to) filters.date = { $gte: new Date(from), $lte: new Date(to) };
 
     return service
-        .countReadings(filters)
+        .getCollectionInfo(filters)
         .then((totalReadings) => res.status(OK).json(totalReadings))
         .catch((error) =>
             res.status(error.status).json({ error: error.message })

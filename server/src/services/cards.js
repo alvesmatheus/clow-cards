@@ -5,10 +5,10 @@ import Card from '../models/Card';
 
 import { validators, validate } from '../utils/validation';
 
-export const countCards = async (filters) => {
+export const getCollectionInfo = async (filters) => {
     try {
         const totalCards = await Card.countDocuments(filters);
-        return { count: totalCards };
+        return { totalDocuments: totalCards };
     } catch (error) {
         throw createError(INTERNAL_SERVER_ERROR, error.message);
     }

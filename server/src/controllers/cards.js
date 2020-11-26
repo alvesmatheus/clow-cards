@@ -2,7 +2,7 @@ import { OK, CREATED } from 'http-status-codes';
 
 import * as service from '../services/cards';
 
-export const countCards = (req, res) => {
+export const getCollectionInfo = (req, res) => {
     const filters = {
         name: new RegExp(req.query.name || '.+', 'i'),
         sign: new RegExp(req.query.sign || '.+', 'i'),
@@ -10,7 +10,7 @@ export const countCards = (req, res) => {
     };
 
     return service
-        .countCards(filters)
+        .getCollectionInfo(filters)
         .then((totalCards) => res.status(OK).json(totalCards))
         .catch((error) =>
             res.status(error.status).json({ error: error.message })
