@@ -6,6 +6,7 @@ import mongoose from 'mongoose';
 import path from 'path';
 
 import config from './config';
+import seedDatabase from './seed';
 import { cardsRouter, readingsRouter, usersRouter } from './routes';
 
 const app = express();
@@ -19,8 +20,11 @@ mongoose.connect(databaseURI, {
 });
 
 const db = mongoose.connection;
-db.once('open', () => console.log('Successfully connected to database!'));
 db.on('error', (error) => console.log(error));
+db.once('open', () => {
+    console.log('Successfully connected to database!');
+    seedDatabase();
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
