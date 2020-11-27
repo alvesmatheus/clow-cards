@@ -1,5 +1,3 @@
-export const HOME = '/home';
-
 export const CARDS = '/cards';
 
 export const DAILY = '/daily-card';

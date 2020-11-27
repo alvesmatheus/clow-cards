@@ -4,7 +4,7 @@ import { useModal } from 'react-brave-modal';
 
 import './index.css';
 
-import { HOME } from '../../constants/routes';
+import { CARDS } from '../../constants/routes';
 
 import LabeledTextInput from '../../components/Input/LabeledTextInput';
 import SubmitButton from '../../components/Button/SubmitButton';
@@ -43,7 +43,7 @@ const SignInPage = ({ signIn }) => {
         e.preventDefault();
         signIn(userInfo).then((signInStatus) => {
             if (signInStatus.success) {
-                history.push(HOME);
+                history.push(CARDS);
             } else {
                 showErrorModal(signInStatus.error);
             }

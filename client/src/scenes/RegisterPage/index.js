@@ -4,7 +4,7 @@ import { useModal } from 'react-brave-modal';
 
 import './index.css';
 
-import { HOME } from '../../constants/routes';
+import { CARDS } from '../../constants/routes';
 
 import LabeledTextInput from '../../components/Input/LabeledTextInput';
 import SubmitButton from '../../components/Button/SubmitButton';
@@ -59,7 +59,7 @@ const RegisterPage = ({ register }) => {
         register(userInfo).then((registerStatus) => {
             if (registerStatus.success) {
                 showWelcomeModal();
-                history.push(HOME);
+                history.push(CARDS);
             } else {
                 showErrorModal(registerStatus.error);
             }

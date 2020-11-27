@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { ModalProvider } from 'react-brave-modal';
 
 import '../constants/colors.css';
@@ -42,6 +42,9 @@ const App = () => {
                         </Route>
                         <Route exact path={REGISTER}>
                             <RegisterPage register={auth.register} />
+                        </Route>
+                        <Route path='*'>
+                            <Redirect to={CARDS} />
                         </Route>
                     </Switch>
                 </ModalProvider>

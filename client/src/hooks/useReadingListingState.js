@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import { HOME } from '../constants/routes';
+import { CARDS } from '../constants/routes';
 
 import { getReadings, getTotalReadings } from '../services/api/ReadingsAPI';
 
@@ -13,7 +13,7 @@ const useReadingListingState = ({ signOut }) => {
     const history = useHistory();
     const forceSignOut = () => {
         signOut();
-        history.push(HOME);
+        history.push(CARDS);
     };
 
     useEffect(() => {
