@@ -1,0 +1,14 @@
+.close-modal-button {
+    background-color: var(--yellow);
+    border: 1px solid var(--black);
+    border-radius: 0.15rem;
+    color: var(--black);
+    cursor: pointer;
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    outline: none;
+    padding: 0.5rem 1.25rem;
+    transition: all 0.2s ease 0s;
+}

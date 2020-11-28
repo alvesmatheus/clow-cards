@@ -3,6 +3,7 @@ import { createContext } from 'react';
 export const CardListingContext = createContext({
     cards: [],
     totalCards: 0,
+    isLoading: true,
     filters: {
         name: '',
         sign: '',

@@ -33,15 +33,22 @@ export const getCardById = (cardId) => {
         .catch((error) => error.response.data);
 };
 
+export const getDailyCard = () => {
+    return cardsAPI
+        .get(`/daily`)
+        .then((response) => response.data)
+        .catch((error) => error.response.data);
+};
+
 export const getCardImageURL = (cardURI) => {
     return `${config.api.staticFilesURL}/${cardURI}`;
 };
 
 export const getTotalCards = (filters) => {
     return cardsAPI
-        .get('/count', {
+        .get('/info', {
             params: { ...filters },
         })
-        .then((response) => response.data.count)
+        .then((response) => response.data.totalDocuments)
         .catch((error) => error.response.data);
 };

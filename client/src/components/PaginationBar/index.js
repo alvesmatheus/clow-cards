@@ -23,7 +23,7 @@ const PaginationBar = ({ totalItems, pagination, changePage }) => {
                     pageClassName='pagination-bar-page'
                     pageLinkClassName='pagination-bar-page-link'
                     activeClassName='pagination-bar-active-page'
-                    activeLinkClassName='pagination-bar-active-link,'
+                    activeLinkClassName='pagination-bar-active-link'
                     previousClassName='pagination-bar-previous-page'
                     previousLinkClassName='pagination-bar-previous-link'
                     breakClassName='pagination-bar-break'

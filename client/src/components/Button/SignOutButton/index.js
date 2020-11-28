@@ -3,14 +3,14 @@ import { useHistory } from 'react-router-dom';
 
 import './index.css';
 
-import { HOME } from '../../../constants/routes';
+import { CARDS } from '../../../constants/routes';
 
 const SignOutButton = ({ signOut }) => {
     const history = useHistory();
 
     const handleSignOut = () => {
         signOut();
-        history.push(HOME);
+        history.push(CARDS);
     };
 
     return (

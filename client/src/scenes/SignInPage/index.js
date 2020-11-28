@@ -4,25 +4,31 @@ import { useModal } from 'react-brave-modal';
 
 import './index.css';
 
-import { HOME } from '../../constants/routes';
+import { CARDS } from '../../constants/routes';
 
 import LabeledTextInput from '../../components/Input/LabeledTextInput';
 import SubmitButton from '../../components/Button/SubmitButton';
+import DefaultModal from '../../components/Modal/DefaultModal';
 
 const SignInPage = ({ signIn }) => {
     const history = useHistory();
-    const { showModal } = useModal();
+    const { showModal, closeModal } = useModal();
 
     const [userInfo, setUserInfo] = useState({
         email: '',
         password: '',
     });
 
-    const showErrorModal = (text) => {
+    const showErrorModal = (erroText) => {
         showModal({
             type: 'simple',
-            title: 'Oops... Something went wrong!',
-            text,
+            data: (
+                <DefaultModal
+                    headerText='Oops... Something went wrong.'
+                    bodyText={erroText}
+                    closeModal={closeModal}
+                />
+            ),
         });
     };
 
@@ -37,7 +43,7 @@ const SignInPage = ({ signIn }) => {
         e.preventDefault();
         signIn(userInfo).then((signInStatus) => {
             if (signInStatus.success) {
-                history.push(HOME);
+                history.push(CARDS);
             } else {
                 showErrorModal(signInStatus.error);
             }

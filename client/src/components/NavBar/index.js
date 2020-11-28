@@ -5,10 +5,10 @@ import './index.css';
 
 import {
     CARDS,
-    HOME,
+    DAILY,
     READINGS,
-    REGISTER,
     SIGNIN,
+    REGISTER,
 } from '../../constants/routes';
 
 import SignOutButton from '../Button/SignOutButton';
@@ -16,7 +16,7 @@ import SignOutButton from '../Button/SignOutButton';
 const NavBar = ({ isUnsigned, signOut }) => {
     return (
         <nav className='nav-bar'>
-            <Link to={HOME} className='nav-bar-brand'>
+            <Link to={CARDS} className='nav-bar-brand'>
                 Clow Cards
             </Link>
             <div className='nav-bar-wrapper'>
@@ -24,7 +24,7 @@ const NavBar = ({ isUnsigned, signOut }) => {
                     <NavLink to={CARDS} className='nav-bar-link'>
                         Meet the Cards
                     </NavLink>
-                    <NavLink to={HOME} className='nav-bar-link'>
+                    <NavLink to={DAILY} className='nav-bar-link'>
                         Card of the Day
                     </NavLink>
                     {!isUnsigned && (

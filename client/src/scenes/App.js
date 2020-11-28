@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { ModalProvider } from 'react-brave-modal';
 
 import '../constants/colors.css';
 import './App.css';
 
-import { CARDS, READINGS, REGISTER, SIGNIN } from '../constants/routes';
+import { CARDS, DAILY, READINGS, SIGNIN, REGISTER } from '../constants/routes';
 
 import useAuth from '../hooks/useAuth';
 
-import CardListingPage from './CardListingPage';
-import ReadingsPage from './ReadingsPage';
 import NavBar from '../components/NavBar';
+import CardListingPage from './CardListingPage';
+import DailyCardPage from './DailyCardPage';
+import ReadingsPage from './ReadingsPage';
 import RegisterPage from './RegisterPage';
 import SignInPage from './SignInPage';
 
@@ -27,6 +28,9 @@ const App = () => {
                         <Route exact path={CARDS}>
                             <CardListingPage />
                         </Route>
+                        <Route exact path={DAILY}>
+                            <DailyCardPage />
+                        </Route>
                         <Route exact path={READINGS}>
                             <ReadingsPage
                                 getUser={auth.getUser}
@@ -38,6 +42,9 @@ const App = () => {
                         </Route>
                         <Route exact path={REGISTER}>
                             <RegisterPage register={auth.register} />
+                        </Route>
+                        <Route path='*'>
+                            <Redirect to={CARDS} />
                         </Route>
                     </Switch>
                 </ModalProvider>

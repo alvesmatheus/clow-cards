@@ -12,13 +12,9 @@
 .pagination-bar-previous-page,
 .pagination-bar-break,
 .pagination-bar-next-page {
-    background-color: var(--yellow);
-    border: 0.05rem solid var(--black);
-    border-radius: 0.25rem;
-    cursor: pointer;
     display: inline-block;
-    margin: 0 1rem;
-    padding: 0.5rem 0.75rem;
+    margin: 0;
+    padding: 0;
 }
 
 .pagination-bar-page-link,
@@ -26,7 +22,14 @@
 .pagination-bar-previous-link,
 .pagination-bar-next-link,
 .pagination-bar-break {
+    background-color: var(--yellow);
+    border: 0.05rem solid var(--black);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 1rem;
     outline: none;
+    padding: 0.5rem 0.75rem;
 }
 
 .pagination-bar-break {
@@ -35,7 +38,7 @@
     cursor: default;
 }
 
-.pagination-bar-active-page {
+.pagination-bar-active-link {
     background-color: var(--purple);
     color: var(--white);
 }

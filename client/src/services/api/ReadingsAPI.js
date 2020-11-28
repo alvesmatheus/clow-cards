@@ -72,9 +72,9 @@ export const getTotalReadings = () => {
     const userToken = getData('token');
 
     return readingsAPI
-        .get('/count', {
+        .get('/info', {
             headers: { Authorization: userToken },
         })
-        .then((response) => response.data.count)
+        .then((response) => response.data.totalDocuments)
         .catch((error) => error.response.data);
 };

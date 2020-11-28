@@ -47,9 +47,3 @@
     grid-template-columns: repeat(9, 1fr);
     min-width: 90%;
 }
-
-.reading-card-image {
-    border-radius: 0.15rem;
-    max-height: 12.5rem;
-    margin-right: 0.75rem;
-}

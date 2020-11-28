@@ -6,7 +6,7 @@ import * as controller from '../controllers/readings';
 
 const router = express.Router();
 
-router.get('/count', verifyToken, controller.countReadings);
+router.get('/info', verifyToken, controller.getCollectionInfo);
 router.get('/:id', verifyToken, controller.getReading);
 router.get('/', verifyToken, controller.getReadingsList);
 router.post('/', verifyToken, controller.createReading);

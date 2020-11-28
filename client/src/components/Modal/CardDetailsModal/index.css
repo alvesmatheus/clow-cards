@@ -1,0 +1,49 @@
+.card-details-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--light-yellow);
+    color: var(--black);
+    min-height: 100%;
+}
+
+.modal-header {
+    background-color: var(--yellow);
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    min-height: 2.5rem;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.card-image-wrapper {
+    padding: 1rem 1rem 0.5rem 1rem;
+    width: 45%;
+}
+
+.card-details {
+    line-height: 1.5rem;
+    padding: 1.5rem 1rem 0.5rem 0;
+    width: 55%;
+}
+
+.card-info {
+    font-size: 1.05rem;
+    margin-bottom: 0.75rem;
+    text-align: justify;
+}
+
+.card-info-type {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-weight: bold;
+    margin-right: 0.25rem;
+}

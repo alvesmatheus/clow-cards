@@ -1,0 +1,366 @@
+[
+    {
+        "name": "The Arrow",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-arrow.jpg",
+        "meaning": "A surge of energy and aggressiveness. The energy that can charge towards the goal. Achieving our goal and desires in the shortest amount of time is done by moving and acting more positively than usual. It is important to set a goal. Unnecessary trouble can be created when you are too greedy, so take care."
+    },
+    {
+        "name": "The Big",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-big.jpg",
+        "meaning": "Big possibilities and abilities, an increase of the thirst for knowledge. At this time, your desire to learn will be intense. There's also a good chance for you to level up — improving every plan and possibility in the process. An unexpected accomplishment might take place involving an impossible (in your opinion) love, relationship, dream, or goal of yours. Significant hints and information about the future can be obtained if you go to group activities and parties."
+    },
+    {
+        "name": "The Bubbles",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-bubbles.jpg",
+        "meaning": "Purification of emotions and break away a vicious cycle. Worries and problems can be beautifully cleaned. A solution will gradually rise if you can work with an obedient feeling without showing off. A person who will support you appears, but is bad to rely on only one person."
+    },
+    {
+        "name": "The Change",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-change.jpg",
+        "meaning": "Change of heart, waste, and lack of concentration. You are envious of others and view things and goals in these negative ways of thinking. This disturbing mood makes you do useless shopping. A change for oneself will result in refreshment. It would be good if you tried playing sports or redecorating your room."
+    },
+    {
+        "name": "The Cloud",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-cloud.jpg",
+        "meaning": "The decision decides the outcome. Your ability to make decisions wisely is questioned, so you must relax and open your heart before judging a situation. If you make the best decision available, your heart will be at ease. It will determine whether your luck will rise or fall. Happy and optimistic people attract other people, and good luck is sure to follow."
+    },
+    {
+        "name": "The Create",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-create.jpg",
+        "meaning": "The blooming of passion. When you express your thoughts and emotions, you feel at ease. You'll experience increased creativity in the fields of art and music. Inspiration and wonderful ideas will come as a result of focusing on these fields. Don't allow yourself to be restricted by traditional concepts or rules. Follow your intuition and act accordingly — the possibility of unexpected discoveries or encounters will be high."
+    },
+    {
+        "name": "The Dark",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-dark.jpg",
+        "meaning": "Let nature take its course, as always. Your energy is low, so stop trying to make your schedule full to bursting with visits to or from friends, relatives, and acquaintances. Take a day off from socializing so you can rest. Even if you lead a fast-paced life, you still need to find the time to take a deep breath and relax. Haste makes waste. The truth is that you need to accept your situation and save your energy for the next step."
+    },
+    {
+        "name": "The Dash",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-dash.jpg",
+        "meaning": "The possibility of an instantaneous victory and the internal fight with yourself. The goal is just ahead, but your spiritual strength is tried as a result of the internal fight with yourself. Keep running as fast as you can, even if is a little painful. Afterward, happiness awaits. You'll go back to the starting point if you give up now. Precious natural luck fades away when suffering heavy losses."
+    },
+    {
+        "name": "The Dream",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-dream.jpg",
+        "meaning": "A chance to get to know oneself, a development period of the subconscious. Your so-called sixth sense is good, so you can obtain important messages from your premonitions and precognitive dreams. There's a suggestion to regain the importance of having a dream, to regain some room in your heart. Mail a letter or give a phone call to a friend which you haven't talked to in a long time."
+    },
+    {
+        "name": "The Earthy",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-earthy.jpg",
+        "meaning": "Source of life, a symbol of effort, and acceptability. Now is the time to focus on the foundation. What is important are the basics, and do not forget to make an effort. There is no immediate effect, but the results will eventually bring about a big chance to become productive. Occasionally, a big heart can accept and stop everything. Nothing turns egocentric, and there is no expected growth."
+    },
+    {
+        "name": "The Erase",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-erase.jpg",
+        "meaning": "Stagnation of luck and a warning to wait. Are there any expenses that were planned out or did you just spend recklessly on desires? Even if a plan fails, continue making steady efforts and wait for the next chance. The successful person approaches you in time of need. Humans are resilient and equipped with profoundness."
+    },
+    {
+        "name": "The Fight",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-fight.jpg",
+        "meaning": "An omen to the big turning point. You'll be thanked for taking the lead without hesitating and for going through a lot of trouble for people. Physical strength and willpower are enhanced, and a current misfortune can be fixed. Don't build up on momentum, or you will make a stupid error in judgment. An elaborate preliminary investigation is necessary and listening to the advice of an elder is a plus."
+    },
+    {
+        "name": "The Firey",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-firey.jpg",
+        "meaning": "Strong beliefs and overcoming obstacles. You can overcome obstacles with your strong life force. Even if you are on the verge of giving up, your high level of energy can still help you to achieve your goals. However, be careful about being overconfident. It may cause people around you to hate you or be angry at you."
+    },
+    {
+        "name": "The Float",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-float.jpg",
+        "meaning": "Freedom, the liberation from restraints. If you make a steady effort, you'll be freed from all pressures. When you don't make a steady effort, it's a sign of pending troubles. Be careful to pay attention to personal relationships, including romantic ones. When it comes to decisions concerning financial problems and work, you should follow an elder's advice instead of making an arbitrary decision."
+    },
+    {
+        "name": "The Flower",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-flower.jpg",
+        "meaning": "Results, rewards, and the chance of accomplishing a goal. There's a chance that your current efforts will finally bloom and let you reach your goal. If you have self-confidence and positive feelings, all will open out in the right direction. Even if a small obstacle shows up, forget about it and don't get angry. Progress can be made with a smile."
+    },
+    {
+        "name": "The Fly",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-fly.jpg",
+        "meaning": "A challenge to leap, a chance, and the development of human relations. Your fortune will be strengthened and everything will progress smoothly. Taking the challenge of qualification examinations for auditions is recommended too. Keep a carefree action in mind, brightly, without withering. Confidence and economic fortune can be remarkably fostered by accomplishing work and favors when a friend asks for them."
+    },
+    {
+        "name": "The Freeze",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-freeze.jpg",
+        "meaning": "Establishment of basic power, it's okay to go at your own pace. There are also seasons in life. A time of growth would be like spring, and winter would be a time of gathering strength. Right now seems to be your charging period of winter. Do not spread yourself out too thin, just settle down slowly and work on things. You must backpedal a bit in order to begin something new. To develop basic power, the priority is to continuously investigate and train."
+    },
+    {
+        "name": "The Glow",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-glow.jpg",
+        "meaning": "Signs of good luck, lucky fortunate approaches. All hesitation is lost and what you should do will naturally appear before your eyes. The most important point is to firmly prepare yourself, so work hard in fundamental studies. Your luck will rise if you participate in volunteer work. A plan needs a solid foundation in order to succeed."
+    },
+    {
+        "name": "The Illusion",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-illusion.jpg",
+        "meaning": "The desire to escape from reality. You tend to only notice changes on the immediate surface of things and to ignore reality. Even if the environment of your life and work change, don't forget that everyone has the power to adapt. Now is essentially the time to relax instead of being a perfectionist. Try it — you may find it surprisingly easy."
+    },
+    {
+        "name": "The Jump",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-jump.jpg",
+        "meaning": "Loss of ability and the best condition. Original power can be demonstrated to your heart's content. Human charm is like a power-up. You will become busy both officially and privately, but will still be able to make enough time for adequate sleep. Tasks at work may be demanded that are above your current ability, leading to confusion, but you ride it out using wisdom and experience."
+    },
+    {
+        "name": "The Libra",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-libra.jpg",
+        "meaning": "Life, action, and adjusting the balance of ideas. When using calm and fair judgment is possible to start choosing humble decisions. Besides, the matter that caused a loss in balance will return to the best state. However, the best state cannot be obtained if you compare lies to the past. If you reflect, you can gradually restore your balance."
+    },
+    {
+        "name": "The Light",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-light.jpg",
+        "meaning": "Lead everything yourself, especially your prospect for the distant future. You attract the attention of everyone with your radiant spirit. No matter what you do, it will always go well and with a great amount of good luck. You'll be able to improve your abilities in your area of specialty, and there's a better chance of secret admirers declaring their love. It's possible to obtain a bright future by doing your very best. Rush into action without fearing failure."
+    },
+    {
+        "name": "The Little",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-little.jpg",
+        "meaning": "A small, but meaningful transformation period. For every obstacle that makes you anxious and uneasy, you'll eventually find a way to calm yourself down and overcome it. You will be successful for a long time if you do your word little by little and keep the pace up. At this time, accumulation is important. If you doubt your own feelings or the feelings of the other party, it will weaken your own energy and cause you to lose something important."
+    },
+    {
+        "name": "The Lock",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-lock.jpg",
+        "meaning": "Intelligence and inner awareness of the truth. The door of truth can be opened and shut. You notice your own heart and can know the secret of another. However, it would be better to leave it alone for now. A pleasant chat will lose trust if it goes on too long. Be careful, because it is difficult to regain the trust that is lost."
+    },
+    {
+        "name": "The Loop",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-loop.jpg",
+        "meaning": "Connection and the chance to step-up. If there are sympathizing, gentle feelings, a lot of people and things begin to connect. Linked by a deep friendship, greater aid will likely be acquirable. You'll go round and round in circles if you can't develop any self-satisfaction. Bright, open feelings are important."
+    },
+    {
+        "name": "The Maze",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-maze.jpg",
+        "meaning": "Confusion and loss of confidence. If you can't make it to a scheduled event and there's no time to arrange it at a different time, take a short little break. Draw an image of the achievement that you desire. It is also important to listen to other people's advice."
+    },
+    {
+        "name": "The Mirror",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-mirror.jpg",
+        "meaning": "A time in which you stare deeply at yourself. Through the behavior of others, your merit and weak point can be found. It's often that the flaw of another person, especially when upset, will cause you to reflect upon yourself. Once again, become modest and reflect on your actions. Renew yourself at once if you remember something you regret."
+    },
+    {
+        "name": "The Mist",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-mist.jpg",
+        "meaning": "Ascertain the situation and decide which direction you'll take. You are given the chance to reconsider what you want to do, but you'll not be able to fully analyze the problems as a result of your indecisiveness. Be calm. If you think simply and with honest feelings, the mist surrounding you'll eventually turn into good weather."
+    },
+    {
+        "name": "The Move",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-move.jpg",
+        "meaning": "Be careful about fidgety actions and remarks. Though it's not bad, your natural fortune is a bit off, timing-wise. The cause seems to be an impromptu remark or a whimsical action. Don't become a person who does nothing but exaggerate. Keep your promises. Communicate to the best of your ability. It's easy to become influenced by feelings, so think before you speak."
+    },
+    {
+        "name": "The Power",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-power.jpg",
+        "meaning": "Development and fulfilled wishes. Your inquisitive mind and daily efforts will become combined, and not only will your wish come true, but you'll also obtain a high position job. Hereafter, aspects concerning work and love are enhanced more and more. A good state will continue as long as you don't treat anyone poorly or become arrogant. Kindness and modesty are necessary during this time."
+    },
+    {
+        "name": "The Rain",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-rain.jpg",
+        "meaning": "Things turn for the better, finally. A rain of blessings will surely occur. Occurrences that are classified as \"misfortunes\" can also be thought of as exercises that will strengthen your character. Don't be pessimistic, painful experiences are only temporary. Relax and enjoy life."
+    },
+    {
+        "name": "The Return",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-return.jpg",
+        "meaning": "The revival of a loser, never give up! You will settle your regrets and the problem that you ran away from. The person who has been labeled as shy will slowly recover. Your natural fortune improves with a good decision. Though you cannot turn back time, you can still change the present and the future with your own power."
+    },
+    {
+        "name": "The Sand",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-sand.jpg",
+        "meaning": "The challenge to change without fear. Time and a person's feelings change constantly, yet they are always in existence so there's no single point of view. Reconciliation with the friend or the lover is sure to go well too if it's taken one step at a time. Do you not notice the person who thinks you are important? They are actually surprisingly closer than you realize."
+    },
+    {
+        "name": "The Shadow",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-shadow.jpg",
+        "meaning": "The unknown, the reason, and the solution to the problem. In fact, the problem haunting you like a shadow is going to give you a message. Since it faces away from the front of the problem, the direction which should be followed probably will come into view. When you always avoid poor and unpleasant things, you'll miss the turning point on the other side of the shadow."
+    },
+    {
+        "name": "The Shield",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-shield.jpg",
+        "meaning": "Protection, a defensive measure to maintain harmony. Even if a crisis is approaching, you may have many people firmly defending you. You can obtain greater power in exchange for love and harmony in particular. Don't forget the feeling of gratitude. When friends are in trouble don't hesitate to reach out to them."
+    },
+    {
+        "name": "The Shot",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-shot.jpg",
+        "meaning": "Focus on the goal. If you become greedy, you will fail. Ascertain why the goal is necessary. It is easy to become aggressive, but scolding yourself when you do will bring progress. You might hurt the other party, even though you didn't mean any harm. If you notice this occurring, humbly apologize."
+    },
+    {
+        "name": "The Silent",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-silent.jpg",
+        "meaning": "Forethoughtfulness, a time for recharging. Even if you honest seems to be quiet, everyone recognizes it. If you serve your role properly in life, good news may come unexpectedly. Even if every day seems to be repetitive, don't be driven to desperation. An understanding person is always nearby."
+    },
+    {
+        "name": "The Sleep",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-sleep.jpg",
+        "meaning": "Rest, a calm state of mind. You are ordinary, but stable without a lot of trouble or fights. Spend every day with an honest, sincere attitude. If you get stuck in a couple of ruts, take a carefree hike — it will bring good luck. The glib talk will lead to a pitfall. Be careful not to cross a metaphorical dangerous bridge."
+    },
+    {
+        "name": "The Snow",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-snow.jpg",
+        "meaning": "A new beginning, peace, and purity. Change your attitude and create a new beginning. This is a very good time to start taking lessons because you'll be able to associate with great mentors. Stop fussing about the past. Try changing your point-of-view and take an active part in this new world."
+    },
+    {
+        "name": "The Song",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-song.jpg",
+        "meaning": "Joy, harmony, and the energy of healing. It becomes possible to express what you want to convey freely when you learn to respect the opinion of the other party. Plan something new with your friend — it would be good for you to go on a trip. Even if you intend to find happiness on your own, it will not be easy. Everyone should share their happiness."
+    },
+    {
+        "name": "The Storm",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-storm.jpg",
+        "meaning": "Intense emotions and reduced frustrations. Suppressed emotions and fears will come bursting to the surface, so you may encounter severe problems. To improve your situation, you need to stop being pessimistic and be more assertive in your opinions. If you stay quiet, your charm will be reduced by half. Firmly express your intentions."
+    },
+    {
+        "name": "The Sweet",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-sweet.jpg",
+        "meaning": "New love and popularity. A special person that softens your heart just by being near you will appear. Your work evaluation seems to rise quickly if you use your cheerfulness to the best of your ability. Your love life can be kept in a stable state for a while. It is good to value communication with a friend, but watch out because you tend to sometimes depend on it a bit too much."
+    },
+    {
+        "name": "The Sword",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-sword.jpg",
+        "meaning": "A quest for truth, compensation, and destructive power. Symbol of truth and power.  When you can make progress with something just as desired. If what you say is true, the highest reward will be obtained. If what you have sown is truth, the highest harvest will be obtained. However, hurting someone and every other wicked scheme can never utilize power."
+    },
+    {
+        "name": "The Through",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-through.jpg",
+        "meaning": "The improvement of an unexpected situation. The key to success is a change in perspective. When you change your way of life and thinking completely its is very likely that your situation will improve for the better, and good luck will come your way. It is important to say \"yes\" and \"no\" clearly. Even if a strong rival appears, face each other without tricks, fairly. They might turn out to be an unexpected cooperator."
+    },
+    {
+        "name": "The Thunder",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-thunder.jpg",
+        "meaning": "Good luck will come your way if you don't lose yourself. Time will test whether you will be able to control your explosive, violent emotions. You'll be able to come up with idea after idea and your unique sense of existence will be appealing. Actions based upon rationality and courage will attract supporters, but selfish desires and behaviors will attract enemies."
+    },
+    {
+        "name": "The Time",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-time.jpg",
+        "meaning": "Independence and improvement by experience. Our existence consists of continuously improving ourselves throughout our experiences — always progressing. It's important to enjoy the moment to the best of your abilities and recognize the message attached to each event. You'll get better at timing if you try to stay aware of it."
+    },
+    {
+        "name": "The Twin",
+        "sign": "Sun",
+        "origin": "Western Magic",
+        "image": "cards/the-twin.jpg",
+        "meaning": "The best partner's appearance. Operating as a team rather than by yourself will bring you more luck. Every member should contribute to what he or she is good at in a give-and-take fashion. Abundant personal connections will become your fortune. \"Thanks\" is a beautiful word that should be cherished. There is a chance that you will come across someone who can talk sincerely."
+    },
+    {
+        "name": "The Voice",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-voice.jpg",
+        "meaning": "The desire to make friends and relationships properly resulting in feelings. You seem fatigued due to neighborliness. Yet, do your true feelings take on the opposite meaning during communication? First, call out to the person with \"good morning\" or \"good afternoon\". Your luck will abate if you aren't able to greet your friend correctly. Bright greetings are the key to good luck."
+    },
+    {
+        "name": "The Watery",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-watery.jpg",
+        "meaning": "Cooperation, the ability to open people's minds. Everyone trusts you because you are such an understanding person. The ability to govern things smoothly is very helpful for work. Demonstrate great leadership — it will transform your environment into one of a gentle aura."
+    },
+    {
+        "name": "The Wave",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-wave.jpg",
+        "meaning": "A flexible attitude will bring good fortune. You have your ups and downs, but ultimately you'll be able to step forward. If you are looking for an advisor to help fix a soured interpersonal relationship, turn to the magnanimous ocean. Also, someone may make an unexpected love confession. In this situation, even if you don't like the person, don't reject him or her."
+    },
+    {
+        "name": "The Windy",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-windy.jpg",
+        "meaning": "Hints of progress, completion, and expectation. A time of change and activity is coming and the possibility of getting meaningful information is big. Observe the situation around you with more caution than you usually would. A decision is important at this time and place. If you have the urge to call someone names or to lash out at someone verbally, hold it back. If you don't, both parties will go through a painful experience."
+    },
+    {
+        "name": "The Wood",
+        "sign": "Moon",
+        "origin": "Eastern Magic",
+        "image": "cards/the-wood.jpg",
+        "meaning": "Symbol of individual growth and development. Steady growth and development. Obtain trust in interpersonal relationships and connect with deep bonds. Talent and ability shine in future months and there's a lot of admiration to receive. This is surely a favorable time to lose your original intentions, don't do it. If you get too caught up in the moment, the things which you built with much effort will become spoiled."
+    }
+]

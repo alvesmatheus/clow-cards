@@ -5,6 +5,7 @@ import { getCards, getTotalCards } from '../services/api/CardsAPI';
 const useCardListingState = () => {
     const [cards, setCards] = useState([]);
     const [totalCards, setTotalCards] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
 
     const [filters, setFilters] = useState({
         name: '',
@@ -20,8 +21,10 @@ const useCardListingState = () => {
     const [pagination, setPagination] = useState({ page: 0, perPage: 10 });
 
     useEffect(() => {
+        setIsLoading(true);
         getCards(filters, sorting, pagination).then((cardsList) => {
             setCards(cardsList);
+            setIsLoading(false);
         });
     }, [filters, pagination, sorting]);
 
@@ -52,6 +55,7 @@ const useCardListingState = () => {
     return {
         cards,
         totalCards,
+        isLoading,
         filters,
         sorting,
         pagination,
