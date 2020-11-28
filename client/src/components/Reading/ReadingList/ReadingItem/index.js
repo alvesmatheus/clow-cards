@@ -1,29 +1,19 @@
 import React, { useState } from 'react';
-import { useModal } from 'react-brave-modal';
 
 import './index.css';
 
-import { getCardImageURL } from '../../../../services/api/CardsAPI';
 import { editReading } from '../../../../services/api/ReadingsAPI';
 import { formatDatetime } from '../../../../utils/dateFormat';
 
 import EditReadingButton from '../../../Button/EditReadingButton';
-import CardDetailsModal from '../../../Modal/CardDetailsModal';
+import CardItem from '../../../Card/CardList/CardItem';
 
 const ReadingItem = ({ reading }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [comments, setComments] = useState(reading.comments);
-    const { showModal } = useModal();
 
     const onSave = () => {
         editReading(reading._id, comments);
-    };
-
-    const showCardDetails = (card) => {
-        showModal({
-            type: 'simple',
-            data: <CardDetailsModal card={card} />,
-        });
     };
 
     return (
@@ -55,13 +45,10 @@ const ReadingItem = ({ reading }) => {
             )}
             <div className='reading-cards-wrapper'>
                 {reading.cards.map((card) => (
-                    <img
-                        alt={card.name}
+                    <CardItem
                         key={`${reading._id}-${card.name}`}
-                        className='reading-card-image'
-                        src={getCardImageURL(card.image)}
-                        title={card.name}
-                        onClick={() => showCardDetails(card)}
+                        card={card}
+                        onReading
                     />
                 ))}
             </div>

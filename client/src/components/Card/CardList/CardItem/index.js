@@ -7,7 +7,7 @@ import { getCardImageURL } from '../../../../services/api/CardsAPI';
 
 import CardDetailsModal from '../../../Modal/CardDetailsModal';
 
-const CardItem = ({ card }) => {
+const CardItem = ({ card, onReading }) => {
     const { showModal } = useModal();
 
     const showDetails = () => {
@@ -22,7 +22,7 @@ const CardItem = ({ card }) => {
             <img
                 alt={card.name}
                 key={card.name}
-                className='card-image'
+                className={`card-image ${onReading && 'on-reading'}`}
                 src={getCardImageURL(card.image)}
                 title={card.name}
                 onClick={() => showDetails()}

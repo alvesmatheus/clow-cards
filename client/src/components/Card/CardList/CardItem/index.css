@@ -8,3 +8,9 @@
     cursor: pointer;
     margin-bottom: 0.25rem;
 }
+
+.on-reading {
+    border-radius: 0.15rem;
+    max-height: 12.5rem;
+    margin: 0 0 0.75rem 0;
+}
