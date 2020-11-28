@@ -7,6 +7,24 @@
     min-width: 100%;
 }
 
+.no-readings-alert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-readings-alert-title {
+    font-family: 'Libre Baskerville', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.no-readings-alert-text {
+    font-size: 1.2rem;
+}
+
 .reading-items-wrapper {
     display: flex;
     flex-direction: column;
