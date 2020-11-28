@@ -8,6 +8,7 @@ import { getReadings, getTotalReadings } from '../services/api/ReadingsAPI';
 const useReadingListingState = ({ signOut }) => {
     const [readings, setReadings] = useState([]);
     const [totalReadings, setTotalReadings] = useState(0);
+    const [isLoading, setIsLoading] = useState(true);
     const [displayedReadings, setDisplayedReadings] = useState(5);
 
     const history = useHistory();
@@ -19,9 +20,11 @@ const useReadingListingState = ({ signOut }) => {
     useEffect(() => {
         const sorting = { order: 'desc' };
 
+        setIsLoading(true);
         getReadings(sorting, displayedReadings)
             .then((readingsList) => {
                 setReadings(readingsList);
+                setIsLoading(false);
             })
             .catch(() => forceSignOut());
     }, [displayedReadings]);
@@ -41,6 +44,7 @@ const useReadingListingState = ({ signOut }) => {
     return {
         readings,
         totalReadings,
+        isLoading,
         displayedReadings,
         increaseDisplayedReadings,
     };
