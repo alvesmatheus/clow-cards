@@ -8,6 +8,7 @@ const DailyCardRecord = ({ dailyCard }) => {
     return (
         <div className='daily-card-record'>
             <img
+                alt={`Card of the Day: ${dailyCard.name}`}
                 className='daily-card-image'
                 src={getCardImageURL(dailyCard.image)}
             />
