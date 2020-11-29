@@ -1,5 +1,3 @@
-> :warning: **Warning:** This is a work-in-progress project, any of the information below can be modified at any time.
-
 # Clow Cards
 
 This is a cartomancy simulator which uses the [Clow deck](https://ccsakura.fandom.com/wiki/Clow_Cards) to perform divination. If you want a sneak peek on whatever the future holds for you, **Clow Cards** is just what you're looking for!
@@ -18,8 +16,6 @@ The **Clow Cards** is a MERN stack application being developed as part of the *W
 
 ## Features
 
-> :small_red_triangle_down: This section will be restructured with more details as the application development proceeds.
-
 ### **Meet the Cards**
 
 This page lists the Clow Cards in the deck. It has the following features:
@@ -29,18 +25,18 @@ This page lists the Clow Cards in the deck. It has the following features:
 - See detailed information of each Clow Card (by clicking it).
 - Search for a specific card by name (using the search bar).
 
-![](https://i.imgur.com/wycgxz8.jpg)
+![Meet the Cards](https://i.imgur.com/ljCclpo.png)
 
-### **Get a Reading**
+### **Your Readings**
 
 > :heavy_exclamation_mark: Only registered users can access this feature.
 
 This page allows you to see  the list of your card readings and to get new ones using the Clow Cards. It has the following features:
 
-- Get a new card reading with the meaning of all the selected cards (using the upper button).
+- Get a new card reading (using the upper button) with the meaning of all the selected cards available when you click on them.
 - If you want, add personal comments on your card readings.
 
-![](https://i.imgur.com/NYS1szd.jpg)
+![Your Readings](https://i.imgur.com/vbtWrdI.png)
 
 ### **Card of the Day**
 
@@ -48,6 +44,8 @@ This page allows you to get the Clow Card of the day. It has the following featu
 
 - See the Clow Card of the current day.
 - See detailed informations of the Clow Card of the day, including its meaning.
+
+![Card of the Day](https://i.imgur.com/t5URvJs.png)
 
 ## Installation and Usage
 
