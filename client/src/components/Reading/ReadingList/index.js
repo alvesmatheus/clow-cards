@@ -20,7 +20,7 @@ const ReadingList = () => {
     return (
         <div className='reading-list'>
             <ReadingListHeader />
-            {!isLoading && readings.length == 0 && (
+            {!isLoading && readings.length === 0 && (
                 <div className='no-readings-alert'>
                     <h3 className='no-readings-alert-title'>
                         No readings found.
