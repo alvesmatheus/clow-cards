@@ -22,7 +22,7 @@ const CardItem = ({ card, onReading }) => {
             <img
                 alt={card.name}
                 key={card.name}
-                className={`card-image ${onReading && 'on-reading'}`}
+                className={`card-image ${onReading ? 'on-reading' : ''}`}
                 src={getCardImageURL(card.image)}
                 title={card.name}
                 onClick={() => showDetails()}

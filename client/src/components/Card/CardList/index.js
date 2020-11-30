@@ -25,6 +25,11 @@ const CardList = () => {
     return (
         <div className='card-list'>
             <CardListHeader />
+            {!isLoading && cards.length === 0 && (
+                <div className='no-cards-alert'>
+                    <h3 className='no-cards-alert-text'>No cards found.</h3>
+                </div>
+            )}
             {isLoading ? (
                 <LoadingDots />
             ) : (
