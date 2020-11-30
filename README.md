@@ -68,12 +68,13 @@ cd clow-cards
 Create a new file named `.env` with the same fields contained in the `.env.example` file. This new file will be used to  set up the environment variables that will link the database with the **Clow Cards** application. To do this, you'll need to follow the steps below.
 
 1. On [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) website, access (or create) your own account.
-3. Deploy a free tier cluster on your MongoDB Atlas account.
-4. Whitelist your connection IP address in this cluster (more details [here](https://docs.atlas.mongodb.com/tutorial/whitelist-connection-ip-address/)).
-5. Create a database user to guarantee access to your cluster (more details [here](https://docs.atlas.mongodb.com/tutorial/create-mongodb-user-for-cluster/)).
-6. On your cluster, click on ***Connect*** and then on ***Connect Your Application***.
-7. Select ***Node.js*** as your ***Driver*** and copy the given ***Connect String Only*** value.
-8. On the `.env` file, replace this ***Connect String Only*** as the value to `DATABASE_URI` field.
+2. Deploy a free tier cluster on your MongoDB Atlas account.
+3. Whitelist your connection IP address in this cluster (more details [here](https://docs.atlas.mongodb.com/tutorial/whitelist-connection-ip-address/)).
+4. Create a database user to guarantee access to your cluster (more details [here](https://docs.atlas.mongodb.com/tutorial/create-mongodb-user-for-cluster/)).
+5. On your cluster, click on ***Connect*** and then on ***Connect Your Application***.
+6. Select ***Node.js*** as your ***Driver*** and copy the given ***Connect String Only*** value.
+7. On the `.env` file, replace this ***Connect String Only*** as the value to `DATABASE_URI` field.
+8. If you prefer, you can replace the `JWT_SECRET` value with one of your preference on the `.env` file.
 
 And... It's done! The **Clow Cards** has access to your database and you're ready to use it! 
 
